@@ -52,7 +52,7 @@ class Auth extends CI_Controller
 				  </button>
 				  </div>');
 					redirect('user/dashboard');
-				}
+				}u
 
 
 			}else {
