@@ -35,26 +35,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('vendor/dekorasi/') ?>" class="nav-link">      
-                  <p>Dekorasi</p>
+                <a href="<?= base_url('vendor/paket/') ?>" class="nav-link">      
+                  <p>PAKET</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<?= base_url('vendor/fotographer/') ?>" class="nav-link">
-                  <p>Fotographer</p>
-                  </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?= base_url('vendor/catering/') ?>" class="nav-link">
-                  <p>Catering</p>
-                  </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?= base_url('vendor/mc/') ?>" class="nav-link">
-                  <p>MC</p>
-                  </a>
-              </li>
-            
+              
 
                <li class="nav-item">
                 <a href="<?= base_url('vendor/auth/logout') ?>" class="nav-link">
