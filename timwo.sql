@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Jul 05, 2021 at 04:36 PM
--- Server version: 5.7.30
--- PHP Version: 7.4.9
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 05 Jul 2021 pada 19.32
+-- Versi server: 10.4.18-MariaDB
+-- Versi PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `book`
+-- Struktur dari tabel `book`
 --
 
 CREATE TABLE `book` (
@@ -36,7 +37,7 @@ CREATE TABLE `book` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `book`
+-- Dumping data untuk tabel `book`
 --
 
 INSERT INTO `book` (`id_booking`, `kategori`, `nama_vendor`, `tanggal`, `dp`, `pelunasan`) VALUES
@@ -45,7 +46,7 @@ INSERT INTO `book` (`id_booking`, `kategori`, `nama_vendor`, `tanggal`, `dp`, `p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `catering`
+-- Struktur dari tabel `catering`
 --
 
 CREATE TABLE `catering` (
@@ -56,7 +57,7 @@ CREATE TABLE `catering` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `catering`
+-- Dumping data untuk tabel `catering`
 --
 
 INSERT INTO `catering` (`id_catering`, `paket`, `harga`, `foto`) VALUES
@@ -69,7 +70,7 @@ INSERT INTO `catering` (`id_catering`, `paket`, `harga`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dekorasi`
+-- Struktur dari tabel `dekorasi`
 --
 
 CREATE TABLE `dekorasi` (
@@ -81,7 +82,7 @@ CREATE TABLE `dekorasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dekorasi`
+-- Dumping data untuk tabel `dekorasi`
 --
 
 INSERT INTO `dekorasi` (`id_dekorasi`, `paket`, `harga`, `foto`, `keterangan`) VALUES
@@ -96,7 +97,7 @@ INSERT INTO `dekorasi` (`id_dekorasi`, `paket`, `harga`, `foto`, `keterangan`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fg`
+-- Struktur dari tabel `fg`
 --
 
 CREATE TABLE `fg` (
@@ -107,7 +108,7 @@ CREATE TABLE `fg` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `fg`
+-- Dumping data untuk tabel `fg`
 --
 
 INSERT INTO `fg` (`id_fg`, `paket`, `harga`, `foto`) VALUES
@@ -119,7 +120,7 @@ INSERT INTO `fg` (`id_fg`, `paket`, `harga`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galeri`
+-- Struktur dari tabel `galeri`
 --
 
 CREATE TABLE `galeri` (
@@ -131,7 +132,30 @@ CREATE TABLE `galeri` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mc`
+-- Struktur dari tabel `kategori_vendor`
+--
+
+CREATE TABLE `kategori_vendor` (
+  `kode_unik` varchar(100) NOT NULL,
+  `kategori` varchar(100) NOT NULL,
+  `status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `kategori_vendor`
+--
+
+INSERT INTO `kategori_vendor` (`kode_unik`, `kategori`, `status`) VALUES
+('CTR', 'Catering', 'verifikasi'),
+('DKR', 'Dekorasi', 'verifikasi'),
+('FTG', 'Fotographer', 'verifikasi'),
+('MC', 'MC', 'verifikasi'),
+('MUA', 'MUA', 'verifikasi');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `mc`
 --
 
 CREATE TABLE `mc` (
@@ -142,7 +166,7 @@ CREATE TABLE `mc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mc`
+-- Dumping data untuk tabel `mc`
 --
 
 INSERT INTO `mc` (`id_mc`, `paket`, `harga`, `foto`) VALUES
@@ -154,7 +178,7 @@ INSERT INTO `mc` (`id_mc`, `paket`, `harga`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mua`
+-- Struktur dari tabel `mua`
 --
 
 CREATE TABLE `mua` (
@@ -167,7 +191,7 @@ CREATE TABLE `mua` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rating`
+-- Struktur dari tabel `rating`
 --
 
 CREATE TABLE `rating` (
@@ -177,7 +201,7 @@ CREATE TABLE `rating` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `rating`
+-- Dumping data untuk tabel `rating`
 --
 
 INSERT INTO `rating` (`id_rating`, `jumlah`, `ulasan`) VALUES
@@ -186,7 +210,53 @@ INSERT INTO `rating` (`id_rating`, `jumlah`, `ulasan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `tb_paket`
+--
+
+CREATE TABLE `tb_paket` (
+  `id_paket` int(11) NOT NULL,
+  `id_vendor` varchar(100) NOT NULL,
+  `paket` varchar(256) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `foto` varchar(256) NOT NULL,
+  `status_paket` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_paket`
+--
+
+INSERT INTO `tb_paket` (`id_paket`, `id_vendor`, `paket`, `harga`, `deskripsi`, `foto`, `status_paket`) VALUES
+(1, 'VND1', 'Gold', 20000000, 'Paket Mewah', 'no-image-jpg', 0),
+(2, 'VND1', 'Silver', 15000000, 'Paket Sederhana', 'no-image-jpg', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_vendor`
+--
+
+CREATE TABLE `tb_vendor` (
+  `kode_vendor` varchar(256) NOT NULL,
+  `nama_vendor` varchar(256) NOT NULL,
+  `no_telp_vendor` varchar(13) NOT NULL,
+  `alamat_vendor` text NOT NULL,
+  `kategori_vendor` varchar(100) NOT NULL,
+  `status` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_vendor`
+--
+
+INSERT INTO `tb_vendor` (`kode_vendor`, `nama_vendor`, `no_telp_vendor`, `alamat_vendor`, `kategori_vendor`, `status`) VALUES
+('VND1', 'Musikawa', '0822654123123', 'Jl. Riau', 'DKR', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -197,166 +267,155 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `level`) VALUES
 (3, 'nadya', '1234', 'admin'),
-(4, 'annisa', '1234', 'admin');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `vendor`
---
-
-CREATE TABLE `vendor` (
-  `id_vendor` int(11) NOT NULL,
-  `nama_vendor` varchar(100) NOT NULL,
-  `kategori` varchar(100) NOT NULL,
-  `alamat` varchar(100) NOT NULL,
-  `telephone` varchar(100) NOT NULL,
-  `foto` varchar(100) NOT NULL,
-  `harga` varchar(100) NOT NULL,
-  `verifikasi` varchar(100) NOT NULL,
-  `status` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `vendor`
---
-
-INSERT INTO `vendor` (`id_vendor`, `nama_vendor`, `kategori`, `alamat`, `telephone`, `foto`, `harga`, `verifikasi`, `status`) VALUES
-(1, 'ABC Fotographer', 'Fotographer', 'jl ', '12345678', 'ui.png', '20000000', '', 'verifikasi'),
-(2, 'xd', 'dsd', 'dd', 'dwd', 'wwdd', 'dwdd', '', 'verifikasi');
+(4, 'annisa', '1234', 'admin'),
+(5, 'cus', 'cus', 'customer'),
+(6, 'admin', 'admin', 'admin');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `book`
+-- Indeks untuk tabel `book`
 --
 ALTER TABLE `book`
   ADD PRIMARY KEY (`id_booking`);
 
 --
--- Indexes for table `catering`
+-- Indeks untuk tabel `catering`
 --
 ALTER TABLE `catering`
   ADD PRIMARY KEY (`id_catering`);
 
 --
--- Indexes for table `dekorasi`
+-- Indeks untuk tabel `dekorasi`
 --
 ALTER TABLE `dekorasi`
   ADD PRIMARY KEY (`id_dekorasi`);
 
 --
--- Indexes for table `fg`
+-- Indeks untuk tabel `fg`
 --
 ALTER TABLE `fg`
   ADD PRIMARY KEY (`id_fg`);
 
 --
--- Indexes for table `galeri`
+-- Indeks untuk tabel `galeri`
 --
 ALTER TABLE `galeri`
   ADD PRIMARY KEY (`id_galeri`);
 
 --
--- Indexes for table `mc`
+-- Indeks untuk tabel `kategori_vendor`
+--
+ALTER TABLE `kategori_vendor`
+  ADD PRIMARY KEY (`kode_unik`);
+
+--
+-- Indeks untuk tabel `mc`
 --
 ALTER TABLE `mc`
   ADD PRIMARY KEY (`id_mc`);
 
 --
--- Indexes for table `mua`
+-- Indeks untuk tabel `mua`
 --
 ALTER TABLE `mua`
   ADD PRIMARY KEY (`id_mua`);
 
 --
--- Indexes for table `rating`
+-- Indeks untuk tabel `rating`
 --
 ALTER TABLE `rating`
   ADD PRIMARY KEY (`id_rating`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `tb_paket`
+--
+ALTER TABLE `tb_paket`
+  ADD PRIMARY KEY (`id_paket`);
+
+--
+-- Indeks untuk tabel `tb_vendor`
+--
+ALTER TABLE `tb_vendor`
+  ADD PRIMARY KEY (`kode_vendor`);
+
+--
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `vendor`
---
-ALTER TABLE `vendor`
-  ADD PRIMARY KEY (`id_vendor`);
-
---
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `book`
+-- AUTO_INCREMENT untuk tabel `book`
 --
 ALTER TABLE `book`
   MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `catering`
+-- AUTO_INCREMENT untuk tabel `catering`
 --
 ALTER TABLE `catering`
   MODIFY `id_catering` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `dekorasi`
+-- AUTO_INCREMENT untuk tabel `dekorasi`
 --
 ALTER TABLE `dekorasi`
   MODIFY `id_dekorasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `fg`
+-- AUTO_INCREMENT untuk tabel `fg`
 --
 ALTER TABLE `fg`
   MODIFY `id_fg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `galeri`
+-- AUTO_INCREMENT untuk tabel `galeri`
 --
 ALTER TABLE `galeri`
   MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `mc`
+-- AUTO_INCREMENT untuk tabel `mc`
 --
 ALTER TABLE `mc`
   MODIFY `id_mc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `mua`
+-- AUTO_INCREMENT untuk tabel `mua`
 --
 ALTER TABLE `mua`
   MODIFY `id_mua` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `rating`
+-- AUTO_INCREMENT untuk tabel `rating`
 --
 ALTER TABLE `rating`
   MODIFY `id_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `tb_paket`
 --
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `tb_paket`
+  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `vendor`
+-- AUTO_INCREMENT untuk tabel `user`
 --
-ALTER TABLE `vendor`
-  MODIFY `id_vendor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
