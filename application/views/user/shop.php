@@ -50,6 +50,10 @@
 </header>
 -->
 <!-- CONTENT =============================-->
+<?php
+
+if ($this->session->userdata('username')) {
+	?>
 <section class="item content">
 <div class="container toparea">
 	<div class="underlined-title">
@@ -142,6 +146,13 @@
 		<!-- /.productbox -->
 		
 		<!-- /.productbox -->
+		<?php
+
+}else{
+	?>
+	<?= $this->session->flashdata('message'); ?>
+	<?php } ?>
+	
 	</div>
 </div>
 </div>
