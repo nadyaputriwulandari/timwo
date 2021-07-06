@@ -55,7 +55,7 @@
 	
 	<div class="row">
 		<?php 
-			foreach ($dekorasi as $dkr) :?>
+			foreach ($dekorasi as $key=>$dkr) :?>
 		<div class="col-md-4">
 			<div class="productbox">
 				<div class="fadeshop">
@@ -65,15 +65,15 @@
 					<a href="#">
 
 					<h1>Paket Dekorasi <?php echo $dkr->paket ?></h1>
-					<p><?php echo $dkr->keterangan ?><p>
+					<p><?php echo $dkr->deskripsi ?><p>
 					</a>
 					<span class="price">
 					<span class="edd_price">Rp. <?php echo $dkr->harga ?></span>
 					<fieldset id="edd_purchase_submit">
 					<input type="hidden" name="edd_action" value="purchase">
 					<input type="hidden" name="edd-gateway" value="manual">
-					<a href = "<?php echo base_url('user/about')?> ">
-					<input type="submit" class="edd-submit button" id="edd-purchase-button" name="edd-purchase" value="Booking" ></a>
+					<a href = "<?php echo base_url('user/booking/index/'.$dkr->kode_vendor.'/'.$dkr->id_paket)?> ">
+					<input type="button" class="edd-submit button" id="edd-purchase-button" name="edd-purchase" value="Booking" ></a>
 				</fieldset>
 					</span>
 					

@@ -25,7 +25,9 @@ class dekor extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['dekorasi'] = $this->model_dekor->tampil_data()->result();
+		$data['dekorasi'] = $this->model_vendor->tampil_data_by_vendor("DKR")->result();
+		//var_dump($data);
+		//die();
         $this->load->view('user/header');
 		$this->load->view('user/dekor', $data);
         $this->load->view('user/footer');
