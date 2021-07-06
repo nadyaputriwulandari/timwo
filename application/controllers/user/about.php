@@ -8,11 +8,16 @@ class about extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+
 		$this->username = $this->session->userdata('username');
+		if (!$this->session->userdata('username')) {
+			// redirect('')
+			echo '<script> alert("Test")<script>';
+		}
 	}
 	public function index()
 	{
-		// var_dump( $this->session->userdata('username'));
+		// var_dump($this->session->userdata('username'));
 		// die();
 		$data = ['nama_customer' => $this->username];
 		$this->load->view('user/header');
