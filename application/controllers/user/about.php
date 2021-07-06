@@ -10,9 +10,11 @@ class about extends CI_Controller
 		parent::__construct();
 
 		$this->username = $this->session->userdata('username');
-		if (!$this->session->userdata('username')) {
+		if ($this->session->userdata('username')) {
 			// redirect('')
-			echo '<script> alert("Test")<script>';
+			//echo '<script> alert("Test")<script>';
+		}else{
+			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda harus login terlebih dahulu!</div>');
 		}
 	}
 	public function index()
