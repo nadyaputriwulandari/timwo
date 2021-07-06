@@ -1,5 +1,6 @@
 <!-- CONTENT =============================-->
 <section class="item content">
+
 	<div class="container toparea">
 		<div class="underlined-title">
 			<div class="editContent">
@@ -20,7 +21,11 @@
 				</div>
 			</form>
 			<div id="edd_checkout_form_wrap" class="edd_clearfix">
-				<form id="edd_purchase_form" class="edd_form" action="#" method="POST">
+			<?php
+
+if ($this->session->userdata('username')) {
+	?>
+	<form id="edd_purchase_form" class="edd_form" action="#" method="POST">
 					<fieldset id="edd_checkout_user_info">
 						<legend>Data Booking</legend>
 						<p id="edd-email-wrap">
@@ -46,6 +51,13 @@
 						<input type="submit" class="edd-submit button" id="edd-purchase-button" name="edd-purchase" value="Booking">
 					</fieldset>
 				</form>
+	<?php
+
+}else{
+	?>
+	<?= $this->session->flashdata('message'); ?>
+	<?php } ?>
+				
 			</div>
 		</div>
 	</div>

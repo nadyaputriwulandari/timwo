@@ -75,9 +75,9 @@
 					</div>
 					
 					<div class="text-center p-t-46 p-b-20">
-						<span class="txt2">
-							or sign up using
-						</span>
+						<a href="<?php echo base_url('user/daftar');?>" class="txt1">
+								Anda belum punya akun? Daftar disini!
+							</a>
 					</div>
 
 					<div class="login100-form-social flex-c-m">

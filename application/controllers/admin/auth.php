@@ -50,7 +50,7 @@ class Auth extends CI_Controller
 				  <span aria-hidden="true">&times;</span>
 				  </button>
 				  </div>');
-					redirect('user/home');
+					redirect('home');
 				};
 			} else {
 				$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -66,6 +66,6 @@ class Auth extends CI_Controller
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect('admin/auth');
+		redirect('home');
 	}
 }

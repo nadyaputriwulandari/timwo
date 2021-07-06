@@ -24,12 +24,27 @@
 		</div>
 		<div id="navbar-collapse-02" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="propClone"><a href="<?php echo base_url('user/home');?>">Home</a></li>
+				<li class="propClone"><a href="<?php echo base_url('home');?>">Home</a></li>
 				<li class="propClone"><a href="<?php echo base_url('user/shop');?>">Services</a></li>
-				<li class="propClone"><a href="<?php echo base_url('user/galeri');?>">Gallery</a></li>
+				<li class="propClone"><a href="<?php echo base_url('galeri');?>">Gallery</a></li>
 				<li class="propClone"><a href="<?php echo base_url('user/about');?>">Booking</a></li>
-				<li class="propClone"><a href="<?php echo base_url('user/kontak');?>">Contact</a></li>
-			</ul>
+				<li class="propClone"><a href="<?php echo base_url('kontak');?>">Contact</a></li>
+				
+				<?php
+	if ($this->session->userdata('username')) {
+		?>
+		<li class="propClone"><a href="<?php echo base_url('admin/auth/logout');?>">Log Out</a></li>
+		
+		<?php
+
+	}else{
+		?>
+		<li class="propClone"><a href="<?php echo base_url('admin/auth');?>">Log In</a></li>
+			
+		<?php
+		}
+				?>
+				</ul>
 		</div>
 	</div>
 	</nav>
@@ -38,7 +53,7 @@
 			<div class="col-md-12 text-center">
 				<div class="text-homeimage">
 					<div class="maintext-image" data-scrollreveal="enter top over 1.5s after 0.1s">
-						 Weddingkuy
+						 Weddingku
 					</div>
 					<div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.3s">
 						 Wedding Organizer Terbaik
