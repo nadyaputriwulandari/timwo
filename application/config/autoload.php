@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','session','form_validation');
+$autoload['libraries'] = array('database', 'session', 'form_validation', 'cart');
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url', 'form', 'security','my_helper');
+$autoload['helper'] = array('url', 'form', 'security', 'my_helper');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('login_model','user_model','model_vendor','model_booking','model_dekor','model_foto','model_catering','model_mc','model_bayar','model_rating','galeri_model','model_paket');
+$autoload['model'] = array('login_model', 'user_model', 'model_vendor', 'model_booking', 'model_dekor', 'model_foto', 'model_catering', 'model_mc', 'model_bayar', 'model_rating', 'galeri_model', 'model_paket');
