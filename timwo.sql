@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Jul 2021 pada 19.32
+-- Waktu pembuatan: 06 Jul 2021 pada 06.25
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 8.0.3
 
@@ -251,7 +251,7 @@ CREATE TABLE `tb_vendor` (
 --
 
 INSERT INTO `tb_vendor` (`kode_vendor`, `nama_vendor`, `no_telp_vendor`, `alamat_vendor`, `kategori_vendor`, `status`) VALUES
-('VND1', 'Musikawa', '0822654123123', 'Jl. Riau', 'DKR', 0);
+('VND1', 'Musikawa', '0822654123123', 'Jl. Riau', 'CTR', 0);
 
 -- --------------------------------------------------------
 
