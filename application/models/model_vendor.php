@@ -26,4 +26,14 @@ class Model_vendor extends CI_Model
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+	public function tampil_data_by_vendor($kode_vendor)
+	{
+
+		$this->db->select('*');
+		$this->db->from('tb_vendor');
+		$this->db->JOIN('kategori_vendor','tb_vendor.kategori_vendor=kategori_vendor.kode_unik','left');
+		$this->db->where('kategori_vendor',$kode_vendor);
+		return $this->db->get();
+
+	}
 }

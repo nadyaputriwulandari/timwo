@@ -65,6 +65,11 @@
                   </a>
               </li>
               <li class="nav-item">
+                <a href="<?= base_url('admin/mua/') ?>" class="nav-link">
+                  <p>MUA</p>
+                  </a>
+              </li>
+              <li class="nav-item">
                 <a href="<?= base_url('admin/booking/') ?>" class="nav-link">
                   <p>Booking</p>
                   </a>

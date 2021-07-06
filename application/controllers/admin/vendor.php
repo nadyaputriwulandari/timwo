@@ -9,6 +9,17 @@ class Vendor extends CI_Controller{
     $this->load->view('admin/vendor', $data);
     $this->load->view('templates/footer');
   }
+  public function tampilvendor()
+  {
+    
+    $data['tb_vendor'] = $this->model_vendor->tampil_data_by_vendor('DKR')->result();
+    //var_dump($data);
+    $this->load->view('templates/header');
+    $this->load->view('templates/sidebar');
+    $this->load->view('admin/vendor', $data);
+    $this->load->view('templates/footer');
+
+  }
   
   
 
@@ -52,4 +63,5 @@ class Vendor extends CI_Controller{
     $this->model_vendor->hapus_data($where,'tb_vendor');
     redirect('admin/vendor');
   }
+
 }
