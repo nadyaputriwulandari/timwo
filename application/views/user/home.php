@@ -86,7 +86,7 @@
 						 Paket Silver ini  bisa digunakan untuk jumlah tamu undangan 600 orang.
 					</p>
 					<div class="item content">
-		<a href="shop.html" class="homebrowseitems">Lihat
+		<a href="<?php echo base_url('user/dekor');?> " class="homebrowseitems">Lihat
 		</a>
 </div>
 				</div>
@@ -101,7 +101,7 @@
 						 Paket ini disediakan untuk jumlah tamu undangan sebanyak 800 orang.
 					</p>
 					<div class="item content">
-		<a href="shop.html" class="homebrowseitems">Lihat
+		<a href="<?php echo base_url('user/dekor');?>" class="homebrowseitems">Lihat
 		</a>
 				</div>
 			</div>
@@ -116,7 +116,7 @@
 						 Paket ini disediakan untuk jumlah tamu undangan sebanyak 1000 orang.
 					</p>
 					<div class="item content">
-		<a href="shop.html" class="homebrowseitems">Lihat
+		<a href="<?php echo base_url('user/dekor');?>" class="homebrowseitems">Lihat
 		</a>
 </div>
 				</div>
