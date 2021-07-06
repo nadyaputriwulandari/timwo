@@ -29,6 +29,7 @@
 				<li class="propClone"><a href="<?php echo base_url('user/galeri');?>">Gallery</a></li>
 				<li class="propClone"><a href="<?php echo base_url('user/about');?>">Booking</a></li>
 				<li class="propClone"><a href="<?php echo base_url('user/kontak');?>">Contact</a></li>
+				<li class="propClone"><a href="<?php echo base_url('admin/auth');?>">Log In</a></li>
 			</ul>
 		</div>
 	</div>
