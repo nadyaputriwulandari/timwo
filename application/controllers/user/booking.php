@@ -69,13 +69,14 @@ class booking extends CI_Controller
 		);
 
 		$this->cart->insert($data);
-		redirect('user/booking/mydata');
+		redirect('user/keranjang');
 	}
 
 	public function mydata()
 	{
 		// $mydata = $this->cart->contents();
 		// var_dump($mydata);
+		// die();
 		$this->load->view('user/test');
 	}
 
