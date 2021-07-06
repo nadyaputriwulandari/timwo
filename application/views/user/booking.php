@@ -67,14 +67,14 @@ if ($this->session->userdata('username')) {
 
 	<?php
 
-}else{
-	?>
+				} else {
+?>
 	<?= $this->session->flashdata('message'); ?>
-	<?php } ?>
-				
-			</div>
-		</div>
-	</div>
+<?php } ?>
+
+</div>
+</div>
+</div>
 </section>
 
 <!-- CALL TO ACTION =============================-->

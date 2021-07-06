@@ -13,7 +13,7 @@ class booking extends CI_Controller
 		if ($this->session->userdata('username')) {
 			// redirect('')
 			//echo '<script> alert("Test")<script>';
-		}else{
+		} else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda harus login terlebih dahulu!</div>');
 		}
 	}
@@ -22,7 +22,7 @@ class booking extends CI_Controller
 		//var_dump($this->model_vendor->tampil_data_by_paket($kode_vendor, $id_paket)->result());
 		// die();
 
-		$data = ['nama_customer' => $this->username,'data_vendor'=>$this->model_vendor->tampil_data_by_paket($kode_vendor, $id_paket)->row()];
+		$data = ['nama_customer' => $this->username, 'data_vendor' => $this->model_vendor->tampil_data_by_paket($kode_vendor, $id_paket)->row()];
 		$this->load->view('user/header');
 		$this->load->view('user/booking', $data);
 		$this->load->view('user/footer');
@@ -38,12 +38,11 @@ class booking extends CI_Controller
 			'tgl_pesan' => set_value('tgl_pesan'),
 			'status_pembayaran' => set_value('status_pembayaran'),
 		);
-
 	}
 
 	public function input_aksi()
 	{
-		$data = array (
+		$data = array(
 			'jenis_paket' => $this->input->post('jenis_paket', TRUE),
 			'harga' => $this->input->post('harga', TRUE),
 			'tgl_pesan' => $this->input->post('tgl_pesan', TRUE),
@@ -54,24 +53,34 @@ class booking extends CI_Controller
 		$this->booking_model->input_data($data);
 		redirect('booking');
 	}
-	
-	public function tambah_kekeranjang($id)
+
+	public function tambah_kekeranjang()
 	{
+		$id = $this->input->post('id_paket');
 		$pkt = $this->model_vendor->find($id);
 
 		$data = array(
 			'id' => $pkt->id_paket,
 			'qty' => 1,
 			'price' => $pkt->harga,
-			'name' => $pkt->paket
+			'name' => $pkt->paket,
+			'options' => array('Tgl' => $this->input->post('tgl_pesan'))
 
 		);
 
 		$this->cart->insert($data);
-		redirect('booking');
+		redirect('user/booking/mydata');
 	}
 
-	
+	public function mydata()
+	{
+		// $mydata = $this->cart->contents();
+		// var_dump($mydata);
+		$this->load->view('user/test');
+	}
 
-
+	public function destroy()
+	{
+		$this->cart->destroy();
+	}
 }
