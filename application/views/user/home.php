@@ -135,7 +135,7 @@
 	<div class="container">
 		<div class="underlined-title">
 			<div class="editContent">
-				<h1 class="text-center latestitems">MENGAPA MEMILIH WEDDING ORGANIZER KAMI</h1>
+				<h1 class="text-center latestitems">INGIN MENJADI MITRA KAMI?</h1>
 			</div>
 			<div class="wow-hr type_short">
 				<span class="wow-hr-h">
@@ -144,39 +144,44 @@
 				<i class="fa fa-star"></i>
 				</span>
 			</div>
+			<div class="row">
+			<div class="col-md-4">
+				
+				<div class="infoareawrap">
+					<h1 class="text-center subtitle"></h1>
+					
+					<div class="item content">
+	
+</div>
+				</div>
+			</div>
 		<div class="row">
-			<div class="col-md-4">
-				<i class="fa fa-microphone infoareaicon"></i>
-				<div class="infoareawrap">
-					<h1 class="text-center subtitle"></h1>
-					<p>
-						 Kami menyediakan paket pernikahan murah yang terjangkau untuk semua, berapapun budget yang anda miliki, kami siap membantu menyiapkan pernikahan anda.
-					</p>
-					
-				</div>
-			</div>
-			<!-- /.col-md-4 col -->
-			<div class="col-md-4">
-				<i class="fa fa-comments infoareaicon"></i>
-				<div class="infoareawrap">
-					<h1 class="text-center subtitle"></h1>
-					<p>
-						 Sejak tahun 2010 tim kami bekerja melayani puluhan pasangan yang melangsungkan pernikahan, pengalaman adalah guru yang baik, kami hadirkan tim berpengalaman untuk membantu pernikahan anda.
-					</p>
-					
-				</div>
-			</div>
-			<!-- /.col-md-4 col -->
 			<div class="col-md-4">
 				<i class="fa fa-bullhorn infoareaicon"></i>
 				<div class="infoareawrap">
 					<h1 class="text-center subtitle"></h1>
 					<p>
-						 Menikah merupakan salah satu bagian dari ibadah kepada Allah SWT, kami akan membantu anda untuk melangsungkan pernikahan yang sesuai tuntunan sunnah.
+						 Ayo menjadi mitra kami dengan menjadi Vendor. Raih keuntungan sebanyak-banyaknya
 					</p>
-					
+					<div class="item content">
+		<a href="<?php echo base_url('admin/auth');?>" class="homebrowseitems">Gabung
+		</a>
+</div>
 				</div>
 			</div>
+			<div class="row">
+			<div class="col-md-4">
+				
+				<div class="infoareawrap">
+					<h1 class="text-center subtitle"></h1>
+					
+					<div class="item content">
+	
+</div>
+				</div>
+			</div>
+			<!-- /.col-md-4 col -->
+			
 		</div>
 	</div>
 </div>
