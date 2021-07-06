@@ -21,7 +21,7 @@ class keranjang extends CI_Controller {
 		//var_dump($this->model_vendor->tampil_data_by_paket($kode_vendor, $id_paket)->result());
 		// die();
 		$this->load->view('user/header');
-		$this->load->view('user/booking');
+		$this->load->view('user/keranjang');
 		$this->load->view('user/footer');
 	}
 	

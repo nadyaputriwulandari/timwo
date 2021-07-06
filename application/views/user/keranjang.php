@@ -11,33 +11,17 @@
 		<fieldset id="edd_checkout_user_info">
 			<table border="1">
  <tr>
-   <th>ID</th>
-   <th>KATEGORI</th>
-   <th>NAMA VENDOR</th>
-   <th>TANGGAL</th>
-   <th>STATUS</th>
+   <th> Nama Pemesan </th>
+   <th> Nama Vendor </th>
+   <th> Paket </th>
+   <th> Harga </th>
+   <th> Tanggal </th>
+   <th> Status </th>
  
-   <th colspan="2">AKSI</th>
+   <th colspan="2">Aksi</th>
 </tr>
 
-<?php
-$no=1;
-foreach ($booking as $bk) : ?>
- 
-<tr>
 
- <td><?php echo $no++ ?></td>
- <td><?php echo $bk->jenis_paket ?></td>
- <td><?php echo $bk->harga ?></td>
- <td><?php echo $bk->tgl_pesan ?></td>
- <td><?php echo $bk->status_pembayaran ?></td>
- 
- 
- <td><?php echo anchor('admin/booking/hapus/' .$bk->id_booking, '<div class="btn btn-primary btn-sm"><i class="fa fa-trash"></i></div') ?></td>
-
-</tr>
-
-<?php endforeach; ?>
 
 </table>
 </div>
@@ -45,9 +29,14 @@ foreach ($booking as $bk) : ?>
 		</div>
 	</div>
 </div>
-
+<br><br>
+<fieldset id="edd_purchase_submit">
+						<input type="hidden" name="edd_action" value="purchase">
+						<input type="hidden" name="edd-gateway" value="manual">
+						<input type="submit" class="edd-submit button" id="edd-purchase-button" name="edd-purchase" value="Checkout">
+					</fieldset>
 </section>
-<div id="edd_checkout_form_wrap" class="edd_clearfix">
+<!-- <div id="edd_checkout_form_wrap" class="edd_clearfix">
 <form id="edd_purchase_form" class="edd_form" method="POST" action="<?php echo site_url('about/input_aksi')?>"> 
 </fieldset>
 				<fieldset id="edd_purchase_submit">
@@ -58,4 +47,4 @@ foreach ($booking as $bk) : ?>
 			</form>
 		</div>
 
-<br><br>
+<br><br> -->
