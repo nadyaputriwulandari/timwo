@@ -26,4 +26,11 @@ class keranjang extends CI_Controller
 		$this->load->view('user/keranjang');
 		$this->load->view('user/footer');
 	}
+
+	public function delete($id)
+	{
+		$where = array('id_paket' => $id);
+		$this->user_model->hapus_data($where, 'user');
+		redirect('user/keranjang');
+	}
 }
