@@ -47,9 +47,10 @@ class booking extends CI_Controller
 	public function input_aksi()
 	{
 		$data = array(
-			'jenis_paket' => $this->input->post('jenis_paket', TRUE),
+			'nama_vendor' => $this->input->post('nama_vendor', TRUE),
+			'paket' => $this->input->post('paket', TRUE),
 			'harga' => $this->input->post('harga', TRUE),
-			'tgl_pesan' => $this->input->post('tgl_pesan', TRUE),
+			'tanggal' => $this->input->post('tanggal', TRUE),
 			'status_pembayaran' => $this->input->post('status_pembayaran', TRUE),
 
 

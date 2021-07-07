@@ -25,7 +25,9 @@ class mc extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['mc'] = $this->model_mc->tampil_data()->result();
+		$data['mc'] = $this->model_vendor->tampil_data_by_vendor("MC")->result();
+		//var_dump($data);
+		//die();
         $this->load->view('user/header');
 		$this->load->view('user/mc', $data);
         $this->load->view('user/footer');

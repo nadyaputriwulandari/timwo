@@ -25,7 +25,9 @@ class mua extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['mua'] = $this->model_mua->tampil_data()->result();
+		$data['mua'] = $this->model_vendor->tampil_data_by_vendor("MUA")->result();
+		//var_dump($data);
+		//die();
         $this->load->view('user/header');
 		$this->load->view('user/mua', $data);
         $this->load->view('user/footer');

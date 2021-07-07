@@ -35,7 +35,7 @@
 			<div class="wrap-login100">
 				<form method="POST" action="<?php echo base_url('admin/auth/proses_login') ?>" class="login100-form validate-form" >
 					<span class="login100-form-title p-b-43">
-						Login to continue
+						Login Sebagai Klien
 					</span>
 					
 					
@@ -91,7 +91,7 @@
 					</div>
 				</form>
 
-				<div class="login100-more" style="background-image: url('assets/images/koto.jpg');">
+				<div class="login100-more" style="background-image: url('assets_user/images/foto3.jpg');">
 				</div>
 			</div>
 		</div>

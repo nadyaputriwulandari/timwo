@@ -25,7 +25,9 @@ class catering extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['catering'] = $this->model_catering->tampil_data()->result();
+		$data['catering'] = $this->model_vendor->tampil_data_by_vendor("CTR")->result();
+		//var_dump($data);
+		//die();
         $this->load->view('user/header');
 		$this->load->view('user/catering', $data);
         $this->load->view('user/footer');
