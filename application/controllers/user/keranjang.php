@@ -24,6 +24,6 @@ class keranjang extends CI_Controller
 		// die();
 		$this->load->view('user/header');
 		$this->load->view('user/keranjang');
-		$this->load->view('user/footer');
+		//$this->load->view('user/footer');
 	}
 }
