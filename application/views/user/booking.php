@@ -31,26 +31,27 @@
 							<p id="edd-email-wrap">
 								<label class="edd-label" for="edd-email">
 									Nama Pemesan</label>
-								<input class="edd-input required" type="text" name="nama_pemesan" id="edd-email" value="<?= $nama_customer ?>">
+								<input class="edd-input required" type="text" name="nama_pemesan" id="edd-email" value="<?= $nama_customer ?>" readonly>
+								<input type="hidden" class="edd-input required" type="text" name="id_vendor" id="id_vendor" value="<?= $kode_vendor ?>">
 							</p>
 							<p id="edd-first-name-wrap">
 								<label class="edd-label" for="edd-first">
 									Nama Vendor
 								</label>
-								<input class="edd-input required" type="text" name="paket" id="edd-first" value="<?= $data_vendor->nama_vendor ?>" required="">
+								<input class="edd-input required" type="text" name="paket" id="edd-first" value="<?= $data_vendor->nama_vendor ?>" required="" readonly>
 							</p>
 							<p id="edd-first-name-wrap">
 								<label class="edd-label" for="edd-first">
 									Jenis Paket
 								</label>
-								<input class="edd-input required" type="text" name="paket" id="edd-first" value="<?= $data_vendor->paket ?>" required="">
-								<input class="edd-input required" type="text" name="id_paket" id="edd-first" value="<?= $data_vendor->id_paket ?>" required="">
+								<input class="edd-input required" type="text" name="paket" id="edd-first" value="<?= $data_vendor->paket ?>" required="" readonly>
+								<input type="hidden" class="edd-input required" type="text" name="id_paket" id="edd-first" value="<?= $data_vendor->id_paket ?>" required="" readonly>
 							</p>
 							<p id="edd-first-name-wrap">
 								<label class="edd-label" for="edd-first">
 									Harga
 								</label>
-								<input class="edd-input required" type="text" name="paket" id="edd-first" value="<?= $data_vendor->harga ?>" required="">
+								<input class="edd-input required" type="text" name="paket" id="edd-first" value="<?= $data_vendor->harga ?>" required="" readonly>
 							</p>
 							<p id="edd-last-name-wrap">
 								<label class="edd-label" for="edd-last">

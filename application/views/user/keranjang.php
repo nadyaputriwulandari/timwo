@@ -11,56 +11,55 @@
 <fieldset id="edd_checkout_user_info">
 	<table border="1">
 		<tr>
-			<th> Nama Pemesan </th>
-			<th> Nama Vendor </th>
-			<th> Paket </th>
-			<th> Harga </th>
-			<th> Tanggal </th>
-			<th> Status </th>
+			<th>No</th>
+			<th>Vendor </th>
+			<th>Paket </th>
+			<th>Tanggal Acara</th>
+			<th>Harga </th>
+			<!-- <th> Status </th> -->
 
-			<th colspan="2">Aksi</th>
+			<!-- <th colspan="2">Aksi</th> -->
 		</tr>
 		<?php $i = 1; ?>
 
 		<?php foreach ($this->cart->contents() as $items) : ?>
-
-			<?php echo form_hidden($i . '[rowid]', $items['rowid']); ?>
-
 			<tr>
-				<td><?php echo form_input(array('name' => $i . '[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
+				<!-- <td><?php echo form_input(array('name' => $i . '[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td> -->
+				<td> <?= $i ?></td>
 				<td>
-					<?php echo $items['name']; ?>
-
-					<?php if ($this->cart->has_options($items['rowid']) == TRUE) : ?>
-
-						<p>
-							<?php foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value) : ?>
-
-								<strong><?php echo $option_name; ?>:</strong> <?php echo $option_value; ?><br />
-
-							<?php endforeach; ?>
-						</p>
-
-					<?php endif; ?>
-
+					<?= $this->cart->product_options($items['rowid'])['Nama_Vendor'] ?>
 				</td>
-				<td style="text-align:right"><?php echo $this->cart->format_number($items['price']); ?></td>
-				<td style="text-align:right">$<?php echo $this->cart->format_number($items['subtotal']); ?></td>
+				<td> <?= $items['name']; ?></td>
+				<td>
+					<!-- <?php if ($this->cart->has_options($items['rowid']) == TRUE) :
+								foreach ($this->cart->product_options($items['rowid']) as $option_name => $option_value) :
+									echo $option_value;
+								endforeach;
+							endif; ?> -->
+					<?= $this->cart->product_options($items['rowid'])['Tgl'] ?>
+				</td>
+				<td> Rp.<?= $this->cart->format_number($items['price']); ?></td>
 			</tr>
 
 			<?php $i++; ?>
 
+
 		<?php endforeach; ?>
+		<tr>
+			<td colspan="4"><strong>Total</strong>
+			</td>
+			<td>
+				Rp.<?php echo $this->cart->format_number($this->cart->total()); ?>
+			</td>
 
-
+		</tr>
 	</table>
 	</div>
 
 	</div>
 	</div>
 	</div>
-	<br><br>
-	<fieldset id="edd_purchase_submit">
+	<fieldset id="edd_purchase_submit ">
 		<input type="hidden" name="edd_action" value="purchase">
 		<input type="hidden" name="edd-gateway" value="manual">
 		<input type="submit" class="edd-submit button" id="edd-purchase-button" name="edd-purchase" value="Checkout">

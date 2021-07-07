@@ -22,7 +22,11 @@ class booking extends CI_Controller
 		//var_dump($this->model_vendor->tampil_data_by_paket($kode_vendor, $id_paket)->result());
 		// die();
 
-		$data = ['nama_customer' => $this->username, 'data_vendor' => $this->model_vendor->tampil_data_by_paket($kode_vendor, $id_paket)->row()];
+		$data = [
+			'nama_customer' => $this->username,
+			'kode_vendor' => $kode_vendor,
+			'data_vendor' => $this->model_vendor->tampil_data_by_paket($kode_vendor, $id_paket)->row()
+		];
 		$this->load->view('user/header');
 		$this->load->view('user/booking', $data);
 		$this->load->view('user/footer');
@@ -57,14 +61,19 @@ class booking extends CI_Controller
 	public function tambah_kekeranjang()
 	{
 		$id = $this->input->post('id_paket');
+		$id_vendor = $this->input->post('id_vendor');
 		$pkt = $this->model_vendor->find($id);
+		$nama_vendor = $this->model_vendor->singel_find_vendor($id_vendor)->nama_vendor;
+		// var_dump($pkt);
+		// var_dump($nama_vendor);
+		// die();
 
 		$data = array(
 			'id' => $pkt->id_paket,
 			'qty' => 1,
 			'price' => $pkt->harga,
 			'name' => $pkt->paket,
-			'options' => array('Tgl' => $this->input->post('tgl_pesan'))
+			'options' => array('Tgl' => $this->input->post('tgl_pesan'), 'ID_Vendor' => $this->input->post('id_vendor'), 'Nama_Vendor' => $nama_vendor)
 
 		);
 
