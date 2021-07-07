@@ -103,7 +103,7 @@ if ($this->session->userdata('username')) {
 			<div class="productbox">
 				<div class="fadeshop">
 					
-					<span class="maxproduct"><img src="<?php echo base_url()?>assets_user/images/diamond.png" alt=""></span>
+					<span class="maxproduct"><img src="<?php echo base_url()?>assets_user/images/mc_silver.png" alt=""></span>
 				</div>
 				<div class="product-details">
 					<a href="<?php echo base_url('user/mc');?>">
@@ -133,7 +133,7 @@ if ($this->session->userdata('username')) {
 			<div class="productbox">
 				<div class="fadeshop">
 					
-					<span class="maxproduct"><img src="<?php echo base_url()?>assets_user/images/diamond.png" alt=""></span>
+					<span class="maxproduct"><img src="<?php echo base_url()?>assets_user/images/foto1.jpeg" alt=""></span>
 				</div>
 				<div class="product-details">
 					<a href="<?php echo base_url('user/mua');?>">
