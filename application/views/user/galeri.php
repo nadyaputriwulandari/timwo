@@ -15,19 +15,20 @@
 		</div>
 
 		<div class="row">
-		<?php 
-			foreach ($galeri as $gal) :?>
-		<div class="col-md-4">
-			<div class="productbox">
-				<div class="fadeshop">
-					<span class="maxproduct"><img src="<?php echo base_url('assets_user/images/'.$gal->gambar) ?>"> </span>
+			<?php
+			foreach ($galeri as $gal) : ?>
+				<div class="col-md-4">
+					<div class="productbox">
+						<div class="fadeshop">
+							<span class="maxproduct"><img src="<?php echo base_url('assets_user/images/' . $gal['gambar']) ?>"> </span>
+						</div>
+
+					</div>
 				</div>
-				
-			</div>
+			<?php endforeach ?>
 		</div>
-		<?php endforeach ?>
-		
+
+		<?= $this->pagination->create_links(); ?>
 	</div>
-</div>
-</div>
+	</div>
 </section>

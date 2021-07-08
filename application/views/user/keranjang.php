@@ -90,7 +90,7 @@
 			</table>
 			<div align="right">
 				<a href="<?php echo base_url('user/shop')  ?>">
-					<div class="btn btn-sm btn-primary">Belanja Lagi
+					<div class="btn btn-sm btn-primary">Pesan Lagi
 					</div>
 				</a>
 			</div>
