@@ -35,8 +35,18 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
+
 				<form method="POST" action="<?php echo base_url('admin/auth/proses_login') ?>" class="login100-form validate-form">
-					<span class="login100-form-title p-b-43">
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							<a href="<?php echo base_url('vendor/login_vendor'); ?>" class="txt1">
+								Anda Vendor Mitra Kami? Login disini!
+						</button>
+					</div>
+
+
+					<span class="login100-form-title p-b-43 p-t-43">
 						Login Sebagai Klien
 					</span>
 
@@ -82,11 +92,7 @@
 						</a>
 					</div>
 
-					<div class="text-center p-t-46 p-b-20">
-						<a href="<?php echo base_url('vendor/login_vendor'); ?>" class="txt1">
-							Anda Vendor? Login disini
-						</a>
-					</div>
+
 
 					<div class="login100-form-social flex-c-m">
 						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
@@ -99,7 +105,7 @@
 					</div>
 				</form>
 
-				<div class="login100-more" style="background-image: url('assets_user/images/foto3.jpg');">
+				<div class="login100-more" style="background-image: url('assets/images/bg-01.jpg');">
 				</div>
 			</div>
 		</div>

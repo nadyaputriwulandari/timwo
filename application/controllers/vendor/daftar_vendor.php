@@ -45,4 +45,3 @@ class Daftar_vendor extends CI_Controller
 		
 	}
 }
-?>

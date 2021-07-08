@@ -31,7 +31,7 @@ class Daftar extends CI_Controller
 	{
 			$data = array(
 				'username' => $this->input->post('username', TRUE),
-                'password'	=> $this->input->post('password', TRUE),
+                'password'	=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT)
                // 'level'	=> $this->input->post('level', TRUE),
 				
 			);
@@ -42,4 +42,3 @@ class Daftar extends CI_Controller
 		
 	}
 }
-?>
