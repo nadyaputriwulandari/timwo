@@ -59,7 +59,7 @@
 						</td>
 						<td> Rp <?= $this->cart->format_number($items['price']); ?></td>
 						<td class="edd_cart_actions">
-							<a class="edd_cart_remove_item_btn" href="<?php echo base_url('user/keranjang/delete'); ?>">Remove</a>
+							<a class="edd_cart_remove_item_btn" href="<?php echo base_url('user/keranjang/delete_item/' . $items['rowid']); ?>">Remove</a>
 						</td>
 					</tr>
 
@@ -97,24 +97,37 @@
 		</div>
 	</form>
 	<div id="edd_checkout_form_wrap" class="edd_clearfix">
-		<form id="edd_purchase_form" class="edd_form" action="#" method="POST">
+		<form id="edd_purchase_form" class="edd_form" action="<?= base_url('user/keranjang/pesan') ?>" method="POST">
 			<fieldset id="edd_checkout_user_info">
 				<legend>Personal Info</legend>
 				<p id="edd-email-wrap">
-					<label class="edd-label" for="edd-email">
+					<label class="edd-label" for="email">
 						Email <span class="edd-required-indicator">*</span></label>
-					<input class="edd-input required" type="email" name="edd_email" placeholder="Email" id="edd-email" name="email">
+					<input class="edd-input required" type="email" placeholder="Email" id="email" name="email">
 				</p>
 				<p id="edd-first-name-wrap">
-					<label class="edd-label" for="edd-first">
+					<label class="edd-label" for="nama">
 						Nama Lengkap <span class="edd-required-indicator">*</span>
 					</label>
-					<input class="edd-input required" type="text" name="edd_first" placeholder="Nama Lengkap" id="edd-first" name="nama" required="">
+					<input class="edd-input required" type="text" placeholder="Nama Lengkap" id="nama" name="nama" value=" <?= $this->session->userdata('username') ?>">
+				</p>
+				<p id="edd-first-name-wrap">
+					<label class="edd-label" for="id_username">
+						ID <span class="edd-required-indicator">*</span>
+					</label>
+					<input class="edd-input required" type="text" placeholder="Nama Lengkap" id="id_username" name="id_username" value=" <?= $this->session->userdata('id') ?>">
 				</p>
 				<p id="edd-last-name-wrap">
 					<label class="edd-label" for="edd-last">
 						No HP </label>
-					<input class="edd-input" type="text" name="edd_last" id="edd-last" placeholder="No HP" name="no_hp">
+					<input class="edd-input" type="text" id="no_hp" placeholder="No HP" name="no_hp">
+				</p>
+				<p id="edd-last-name-wrap">
+					<label class="edd-label" for="alamat">
+						Alamat </label>
+					<!-- <input class="edd-input" type="text"  id="edd-last" placeholder="No HP" name="no_hp">
+					 -->
+					<textarea class="edd-input" name="alamat" id="alamat"></textarea>
 				</p>
 			</fieldset>
 			<fieldset id="edd_purchase_submit">

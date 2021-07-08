@@ -36,6 +36,7 @@ class Auth extends CI_Controller
 
 					$sess_data['username'] = $ck->username;
 					$sess_data['level'] = $ck->level;
+					$sess_data['id'] = $ck->id;
 
 					$this->session->set_userdata($sess_data);
 				}
