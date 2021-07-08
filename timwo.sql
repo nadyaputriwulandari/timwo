@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Jul 2021 pada 06.25
+-- Waktu pembuatan: 08 Jul 2021 pada 05.26
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 8.0.3
 
@@ -29,19 +29,25 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `book` (
   `id_booking` int(11) NOT NULL,
-  `kategori` varchar(100) NOT NULL,
   `nama_vendor` varchar(100) NOT NULL,
-  `tanggal` varchar(100) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `no_hp` varchar(15) NOT NULL,
+  `alamat` text NOT NULL,
+  `tgl_pembayaran` datetime NOT NULL,
+  `tgl_expired` datetime NOT NULL,
   `dp` int(11) NOT NULL,
-  `pelunasan` int(11) NOT NULL
+  `pelunasan` int(11) NOT NULL,
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data untuk tabel `book`
 --
 
-INSERT INTO `book` (`id_booking`, `kategori`, `nama_vendor`, `tanggal`, `dp`, `pelunasan`) VALUES
-(1, 'foto ', 'abcfoto', '13/12/2021', 0, 0);
+INSERT INTO `book` (`id_booking`, `nama_vendor`, `email`, `no_hp`, `alamat`, `tgl_pembayaran`, `tgl_expired`, `dp`, `pelunasan`, `status`) VALUES
+(4, ' 5', 'asd@gmail', '082276853382', 'Jalan batu sari, RT 1 RW 1. gang. Samping kantor desa buahbatu kost bapak hj sulaiman desa Buahbatu\r\nBojongsoang', '2021-07-08 10:23:16', '2021-07-09 10:23:16', 0, 0, 0),
+(5, ' 5', 'andrahafizhsb03@gmail.com', '082276853382', 'Jalan batu sari, RT 1 RW 1. gang. Samping kantor desa buahbatu kost bapak hj sulaiman desa Buahbatu\r\nBojongsoang', '2021-07-08 10:23:30', '2021-07-09 10:23:30', 0, 0, 0),
+(6, ' 5', 'asd@gmail', '082276853382', 'Jalan batu sari, RT 1 RW 1. gang. Samping kantor desa buahbatu kost bapak hj sulaiman desa Buahbatu\r\nBojongsoang', '2021-07-08 10:24:47', '2021-07-09 10:24:47', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -229,7 +235,33 @@ CREATE TABLE `tb_paket` (
 
 INSERT INTO `tb_paket` (`id_paket`, `id_vendor`, `paket`, `harga`, `deskripsi`, `foto`, `status_paket`) VALUES
 (1, 'VND1', 'Gold', 20000000, 'Paket Mewah', 'no-image-jpg', 0),
-(2, 'VND1', 'Silver', 15000000, 'Paket Sederhana', 'no-image-jpg', 0);
+(2, 'VND1', 'Silver', 15000000, 'Paket Sederhana', 'no-image-jpg', 0),
+(3, 'VND2', 'Paket Diamond', 40000000, 'Paket sangat mewah dadadada', 'diamond.png', 0),
+(4, 'VND3', 'Paket 500 orang', 23000000, 'Paket menyediakan jumlah tamu 500 orang', 'catering_diamond.png', 0),
+(5, 'VND4', 'Paket Diamond', 7000000, 'Paket meliputi akad dan resepsi', 'fg_diamond.png', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_pesanan`
+--
+
+CREATE TABLE `tb_pesanan` (
+  `id_pesan` int(11) NOT NULL,
+  `id_booking` int(11) NOT NULL,
+  `id_paket` int(11) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `tgl_acara` datetime NOT NULL,
+  `status_pesanan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_pesanan`
+--
+
+INSERT INTO `tb_pesanan` (`id_pesan`, `id_booking`, `id_paket`, `harga`, `jumlah`, `tgl_acara`, `status_pesanan`) VALUES
+(1, 6, 1, 20000000, 1, '2021-07-10 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -251,7 +283,12 @@ CREATE TABLE `tb_vendor` (
 --
 
 INSERT INTO `tb_vendor` (`kode_vendor`, `nama_vendor`, `no_telp_vendor`, `alamat_vendor`, `kategori_vendor`, `status`) VALUES
-('VND1', 'Musikawa', '0822654123123', 'Jl. Riau', 'CTR', 0);
+('VND1', 'Musikawa', '0822654123123', 'Jl. Riau', 'DKR', 0),
+('VND2', 'Royal Wedding', '0765444354', 'Jl. Malaysia', 'DKR', 0),
+('VND3', 'Pagi Sore Catering', '07658889899', 'Jl. Sudirman', 'CTR', 0),
+('VND4', 'Maghligai Foto', '089876754344', 'Jl. Diponegoro', 'FTG', 0),
+('VND5', 'Raga Queen', '082345665543', 'Jl. Durian', 'MC', 0),
+('VND6', 'Tya Sherliana', '081988906543', 'Jl. Tuanku Tambusai', 'MUA', 0);
 
 -- --------------------------------------------------------
 
@@ -341,6 +378,12 @@ ALTER TABLE `tb_paket`
   ADD PRIMARY KEY (`id_paket`);
 
 --
+-- Indeks untuk tabel `tb_pesanan`
+--
+ALTER TABLE `tb_pesanan`
+  ADD PRIMARY KEY (`id_pesan`);
+
+--
 -- Indeks untuk tabel `tb_vendor`
 --
 ALTER TABLE `tb_vendor`
@@ -360,7 +403,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `book`
 --
 ALTER TABLE `book`
-  MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `catering`
@@ -408,7 +451,13 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT untuk tabel `tb_paket`
 --
 ALTER TABLE `tb_paket`
-  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_pesanan`
+--
+ALTER TABLE `tb_pesanan`
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
