@@ -66,13 +66,13 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="pass2">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Confirm Password</span>
 					</div>
@@ -83,7 +83,7 @@
 						</div>
 
 						<div>
-							<a href="<?php echo base_url('admin/auth'); ?>" class="txt1">
+							<a href="<?php echo base_url('vendor/login_vendor'); ?>" class="txt1">
 								Sudah Daftar? Login Disini
 							</a>
 						</div>

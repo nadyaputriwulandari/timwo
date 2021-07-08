@@ -38,14 +38,6 @@
 
 				<form method="POST" action="<?php echo base_url('admin/auth/proses_login') ?>" class="login100-form validate-form">
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							<a href="<?php echo base_url('vendor/login_vendor'); ?>" class="txt1">
-								Anda Vendor Mitra Kami? Login disini!
-						</button>
-					</div>
-
-
 					<span class="login100-form-title p-b-43 p-t-43">
 						Login Sebagai Klien
 					</span>
@@ -92,8 +84,11 @@
 						</a>
 					</div>
 
-
-
+					<div class="text-center p-t-46 p-b-20">
+						<a href="<?php echo base_url('vendor/login_vendor'); ?>" class="txt1">
+							Anda Vendor Mitra Kami? Login Disini
+						</a>
+					</div>
 					<div class="login100-form-social flex-c-m">
 						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
 							<i class="fa fa-facebook-f" aria-hidden="true"></i>
