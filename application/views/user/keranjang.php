@@ -57,7 +57,7 @@
 									endif; ?> -->
 							<?= $this->cart->product_options($items['rowid'])['Tgl'] ?>
 						</td>
-						<td> Rp.<?= $this->cart->format_number($items['price']); ?></td>
+						<td> Rp <?= $this->cart->format_number($items['price']); ?></td>
 						<td class="edd_cart_actions">
 							<a class="edd_cart_remove_item_btn" href="<?php echo base_url('user/keranjang/delete'); ?>">Remove</a>
 						</td>
@@ -88,6 +88,12 @@
 					</tr>
 				</tfoot>
 			</table>
+			<div align="right">
+				<a href="<?php echo base_url('user/shop')  ?>">
+					<div class="btn btn-sm btn-primary">Belanja Lagi
+					</div>
+				</a>
+			</div>
 		</div>
 	</form>
 	<div id="edd_checkout_form_wrap" class="edd_clearfix">
