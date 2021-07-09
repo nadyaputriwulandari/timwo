@@ -31,7 +31,7 @@ class Login_vendor extends CI_Controller
             if ($cek->num_rows() > 0) {
 
 
-                redirect('vendor/dashboard');
+                redirect('vendor/login_vendor');
 
                 // foreach ($cek->result() as $ck) {
 
