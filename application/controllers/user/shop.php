@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class shop extends CI_Controller {
+class shop extends CI_Controller
+{
 	public $username = null;
 	function __construct()
 	{
@@ -11,8 +12,8 @@ class shop extends CI_Controller {
 		if ($this->session->userdata('username')) {
 			// redirect('')
 			//echo '<script> alert("Test")<script>';
-		}else{
-			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda harus login terlebih dahulu!</div>');
+		} else {
+			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert" align="center" >Anda harus login terlebih dahulu!</div>');
 		}
 	}
 	/**
@@ -32,8 +33,8 @@ class shop extends CI_Controller {
 	 */
 	public function index()
 	{
-        $this->load->view('user/header');
+		$this->load->view('user/header');
 		$this->load->view('user/shop');
-        $this->load->view('user/footer');
+		$this->load->view('user/footer');
 	}
 }

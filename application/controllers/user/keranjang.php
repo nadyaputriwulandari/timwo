@@ -14,7 +14,7 @@ class keranjang extends CI_Controller
 			// redirect('')
 			//echo '<script> alert("Test")<script>';
 		} else {
-			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda harus login terlebih dahulu!</div>');
+			$this->session->set_flashdata('message', '<div class="alert alert-danger" align="center" role="alert">Anda harus login terlebih dahulu!</div>');
 		}
 	}
 	public function index()
