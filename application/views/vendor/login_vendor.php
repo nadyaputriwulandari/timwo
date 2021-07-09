@@ -30,6 +30,7 @@
     <!--===============================================================================================-->
 </head>
 
+
 <body style="background-color: #666666;">
 
     <div class="limiter">
@@ -76,15 +77,15 @@
                         </button>
                     </div>
 
-                    <div class="text-center p-t-46 p-b-20">
+                    <div class="text-center p-t-46 p-b-20 ">
                         <a href="<?php echo base_url('vendor/daftar_vendor'); ?>" class="txt1">
                             Anda belum menjadi vendor kami? Daftar disini!
                         </a>
                     </div>
 
-                    <div class="text-center p-t-46 p-b-20">
+                    <div class="text-center p-t-5 p-b-30">
                         <a href="<?php echo base_url('admin/auth'); ?>" class="txt1">
-                            Anda Customer Kami? Login disini
+                            <h6> Anda Klien Kami? Login disini! </h6>
                         </a>
                     </div>
 

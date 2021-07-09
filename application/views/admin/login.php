@@ -37,7 +37,6 @@
 			<div class="wrap-login100">
 
 				<form method="POST" action="<?php echo base_url('admin/auth/proses_login') ?>" class="login100-form validate-form">
-
 					<span class="login100-form-title p-b-43 p-t-43">
 						Login Sebagai Klien
 					</span>
@@ -84,9 +83,9 @@
 						</a>
 					</div>
 
-					<div class="text-center p-t-46 p-b-20">
+					<div class="text-center p-t-5 p-b-30">
 						<a href="<?php echo base_url('vendor/login_vendor'); ?>" class="txt1">
-							Anda Vendor Mitra Kami? Login Disini
+							<h6>Anda Vendor Mitra Kami? Login Disini</h6>
 						</a>
 					</div>
 					<div class="login100-form-social flex-c-m">

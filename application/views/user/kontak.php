@@ -65,7 +65,7 @@
 							<p>
 								Ayo menjadi mitra kami dengan menjadi Vendor. Raih keuntungan sebanyak-banyaknya
 							</p>
-							<div class="item content">
+							<div class="item content" align="center">
 								<a href="<?php echo base_url('vendor/daftar_vendor'); ?>" class="homebrowseitems">Gabung
 								</a>
 							</div>

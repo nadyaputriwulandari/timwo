@@ -48,6 +48,18 @@
 						<span class="label-input100">Username</span>
 					</div>
 
+					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="alamat">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Alamat</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="no_hp">
+						<span class="focus-input100"></span>
+						<span class="label-input100">No HP</span>
+					</div>
+
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
