@@ -73,4 +73,14 @@ class Model_vendor extends CI_Model
 			return array();
 		}
 	}
+	// public function tampil_paket_by_vendor($kode_vendor)
+	// {
+
+	// 	$this->db->select('*');
+	// 	$this->db->from('tb_paket');
+	// 	$this->db->JOIN('tb_vendor', 'tb_vendor.kode_vendor=tb_paket.id_vendor');
+	// 	//$this->db->JOIN('tb_paket', 'tb_paket.id_vendor=tb_vendor.kode_vendor', 'left');
+	// 	$this->db->where('id_vendor', $kode_vendor);
+	// 	return $this->db->get();
+	// }
 }

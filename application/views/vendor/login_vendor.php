@@ -36,7 +36,7 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-                <form method="POST" action="<?php echo base_url('vendor/dashboard') ?>" class="login100-form validate-form">
+                <form method="POST" action="<?php echo base_url('vendor/login_vendor/proses_login') ?>" class="login100-form validate-form">
                     <span class="login100-form-title p-b-43">
                         Login Sebagai Vendor
                     </span>

@@ -63,14 +63,9 @@ class galeri extends CI_Controller
 
 		$config['attributes'] = array('class' => 'page-link');
 
-
-
-
-
-
 		$this->pagination->initialize($config);
 
-		// echo $this->pagination->create_links();
+		//echo $this->pagination->create_links();
 		$data['start'] = $this->uri->segment(3);
 		$data['galeri'] = $this->galeri_model->tampil($config['per_page'], $data['start']);
 
@@ -78,5 +73,23 @@ class galeri extends CI_Controller
 		$this->load->view('user/header');
 		$this->load->view('user/galeri', $data);
 		$this->load->view('user/footer');
+	}
+
+	public function load_galeri()
+	{
+		$kategori_vendor = $_GET['kategori_vendor'];
+		$data = $this->db->get_where('galeri', ['kategori' => $kategori_vendor])->result();
+		echo $data;
+		foreach ($data as $gal) : ?>
+			<div class="col-md-4">
+				<div class="productbox">
+					<div class="fadeshop">
+						<span class="maxproduct"><img src="<?php echo base_url('assets_user/images/' . $gal['gambar']) ?>"> </span>
+					</div>
+
+				</div>
+			</div>
+		<?php endforeach ?>
+<?php
 	}
 }
