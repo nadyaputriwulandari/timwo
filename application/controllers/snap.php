@@ -27,6 +27,7 @@ class Snap extends CI_Controller
 		$this->load->library('midtrans');
 		$this->midtrans->config($params);
 		$this->load->helper('url');
+		$this->load->model('model_transaksi');
 	}
 
 	public function index()
@@ -127,9 +128,53 @@ class Snap extends CI_Controller
 
 	public function finish()
 	{
-		$result = json_decode($this->input->post('result_data'));
+		$result = json_decode($this->input->post('result_data'), true);
+		$data = [
+			'order_id' => $result['order_id'],
+			'gross_amount' => $result['gross_amount'],
+			'payment_type' => $result['payment_type'],
+			'transaction_time' => strtotime($result['transaction_time']),
+			'bank' => $result['va_numbers'][0]['bank'],
+			'va_numbers' => $result['va_numbers'][0]["bank"],
+			'pdf_url' => $result['pdf_url'],
+			'status_code' => $result['transaction_status'],
+		];
+		$this->model_transaksi->input_data($data);
+
+		date_default_timezone_set('Asia/Jakarta');
+		$id = $this->input->post('id_username');
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$no_hp = $this->input->post('no_hp');
+		$alamat = $this->input->post('alamat');
+
+		$booking = array(
+			'nama_vendor' => $id,
+			'email' => $email,
+			'no_hp' => $no_hp,
+			'alamat' => $alamat,
+			'tgl_pembayaran' => date('Y-m-d H:i:s'),
+			'tgl_expired' => date('Y-m-d H:i:s', mktime(date('H'), date('i'), date('s'), date('m'), date('d') + 1, date('Y'))),
+			'dp' => 0,
+			'pelunasan' => 0,
+			'status' => 0
+		);
+		$this->db->insert('book', $booking);
+		$id_book = $this->db->insert_id();
+		// var_dump($id_invoice);
+		foreach ($this->cart->contents() as $item) {
+			$data = array(
+				'id_booking' => $id_book,
+				'id_paket' => $item['id'],
+				'harga' =>  $item['price'],
+				'jumlah' =>  $item['qty'],
+				'tgl_acara' => $this->cart->product_options($item['rowid'])['Tgl'],
+			);
+			$this->db->insert('tb_pesanan', $data);
+		}
 		echo 'RESULT <br><pre>';
 		var_dump($result);
+		var_dump($data);
 		echo '</pre>';
 	}
 }

@@ -169,7 +169,8 @@ if ($this->session->userdata('username')) {
 										<input type="hidden" name="edd_action" value="purchase">
 										<input type="hidden" name="edd-gateway" value="manual">
 										<!-- <input type="submit" class="edd-submit button" id="edd-purchase-button" name="edd-purchase" value="Purchase"> -->
-										<button id="pay-button" data-total="<?= $this->cart->total(); ?>">Pay!</button>
+										<button class="edd-submit button" id="pay-button" data-total="<?= $this->cart->total(); ?>">Pay!</button>
+										
 									</fieldset>
 								</form>
 							</div>
