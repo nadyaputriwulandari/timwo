@@ -55,24 +55,7 @@ class Snap extends CI_Controller
 				'name' => $this->cart->product_options($items['rowid'])['Nama_Vendor'] . '(' . $items['name'] . ')'
 			);
 		endforeach;
-		// Optional
-		// $item1_details = array(
-		// 	'id' => 'a1',
-		// 	'price' => 18000,
-		// 	'quantity' => 3,
-		// 	'name' => "Apple"
-		// );
 
-		// // Optional
-		// $item2_details = array(
-		// 	'id' => 'a2',
-		// 	'price' => 20000,
-		// 	'quantity' => 2,
-		// 	'name' => "Orange"
-		// );
-
-		// Optional
-		// $item_details = array($item1_details, $item2_details);
 
 		// Optional
 		$billing_address = array(
@@ -129,8 +112,16 @@ class Snap extends CI_Controller
 	public function finish()
 	{
 		$result = json_decode($this->input->post('result_data'), true);
+		// var_dump($result);
+		// echo strtotime($result['transaction_time']);
+		// echo '<br>';
+		// echo date('Y-m-d H:i:s', strtotime($result['transaction_time']));
+		// echo '<br>';
+		// echo date('Y-m-d H:i:s', strtotime($result['transaction_time']) + (60 * 60 * 24));
+		// die();
 		$data = [
 			'order_id' => $result['order_id'],
+			'id_user' => $this->input->post('id_username'),
 			'gross_amount' => $result['gross_amount'],
 			'payment_type' => $result['payment_type'],
 			'transaction_time' => strtotime($result['transaction_time']),
@@ -142,39 +133,45 @@ class Snap extends CI_Controller
 		$this->model_transaksi->input_data($data);
 
 		date_default_timezone_set('Asia/Jakarta');
-		$id = $this->input->post('id_username');
-		$nama = $this->input->post('nama');
-		$email = $this->input->post('email');
-		$no_hp = $this->input->post('no_hp');
-		$alamat = $this->input->post('alamat');
+		// $id = $this->input->post('id_username');
+		// $nama = $this->input->post('nama');
+		// $email = $this->input->post('email');
+		// $no_hp = $this->input->post('no_hp');
+		// $alamat = $this->input->post('alamat');
+		// $order_id = $result['order_id'];
 
-		$booking = array(
-			'nama_vendor' => $id,
-			'email' => $email,
-			'no_hp' => $no_hp,
-			'alamat' => $alamat,
-			'tgl_pembayaran' => date('Y-m-d H:i:s'),
-			'tgl_expired' => date('Y-m-d H:i:s', mktime(date('H'), date('i'), date('s'), date('m'), date('d') + 1, date('Y'))),
-			'dp' => 0,
-			'pelunasan' => 0,
-			'status' => 0
-		);
-		$this->db->insert('book', $booking);
-		$id_book = $this->db->insert_id();
-		// var_dump($id_invoice);
+		// $booking = array(
+		// 	'nama_vendor' => $id,
+		// 	'email' => $email,
+		// 	'no_hp' => $no_hp,
+		// 	'alamat' => $alamat,
+		// 	'tgl_pembayaran' => date('Y-m-d H:i:s'),
+		// 	'tgl_expired' => date('Y-m-d H:i:s', mktime(date('H'), date('i'), date('s'), date('m'), date('d') + 1, date('Y'))),
+		// 	'dp' => 0,
+		// 	'pelunasan' => 0,
+		// 	'status' => 0
+		// );
+		// $this->db->insert('book', $booking);
+		// $id_book = $this->db->insert_id();
+		// // var_dump($id_invoice);
 		foreach ($this->cart->contents() as $item) {
 			$data = array(
-				'id_booking' => $id_book,
+				'order_id' => $result['order_id'],
 				'id_paket' => $item['id'],
 				'harga' =>  $item['price'],
 				'jumlah' =>  $item['qty'],
 				'tgl_acara' => $this->cart->product_options($item['rowid'])['Tgl'],
+				'status_pesanan' => 0
 			);
 			$this->db->insert('tb_pesanan', $data);
 		}
-		echo 'RESULT <br><pre>';
-		var_dump($result);
-		var_dump($data);
-		echo '</pre>';
+		$this->session->set_flashdata('msg_sukses', '<div class="alert alert-success" align="center" role="alert">Transaksi Berhasil</div>');
+		$this->cart->destroy();
+		echo "<script> alert('Transaksi Berhasil, silahkan lakukan pembayaran');</script>";
+		echo "<script> window.location='" . base_url('user/keranjang') . "';</script>";
+		// echo 'RESULT <br><pre>';
+		// var_dump($result);
+		// var_dump($data);
+		// echo '</pre>';
 	}
 }

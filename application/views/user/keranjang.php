@@ -22,7 +22,8 @@ if ($this->session->userdata('username')) {
 						<?php
 
 						$this->session->set_flashdata('msg_emptycart', '<div class="alert alert-danger" align="center" role="alert">Keranjang Kosong</div>');
-						echo $this->session->flashdata('msg_emptycart'); ?>
+						echo $this->session->flashdata('msg_emptycart');
+						echo $this->session->flashdata('msg_sukses'); ?>
 
 					</div>
 				</div>
@@ -46,6 +47,7 @@ if ($this->session->userdata('username')) {
 
 
 						<div id="edd_checkout_wrap" class="col-md-8 col-md-offset-2">
+							<?= $this->session->flashdata('msg_sukses'); ?>
 							<div id="edd_checkout_cart_wrap">
 								<table id="edd_checkout_cart" class="ajaxed">
 									<thead>
