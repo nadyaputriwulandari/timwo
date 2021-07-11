@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2021 at 06:35 AM
+-- Generation Time: Jul 11, 2021 at 09:01 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -49,80 +49,6 @@ INSERT INTO `book` (`id_booking`, `nama_vendor`, `email`, `no_hp`, `alamat`, `tg
 (5, ' 5', 'andrahafizhsb03@gmail.com', '082276853382', 'Jalan batu sari, RT 1 RW 1. gang. Samping kantor desa buahbatu kost bapak hj sulaiman desa Buahbatu\r\nBojongsoang', '2021-07-08 10:23:30', '2021-07-09 10:23:30', 0, 0, 0),
 (6, ' 5', 'asd@gmail', '082276853382', 'Jalan batu sari, RT 1 RW 1. gang. Samping kantor desa buahbatu kost bapak hj sulaiman desa Buahbatu\r\nBojongsoang', '2021-07-08 10:24:47', '2021-07-09 10:24:47', 0, 0, 0),
 (7, ' 5', 'fitrah18ti@mahasiswa.pcr.ac.id', '082386492086', 'Jalan Tuanku Tambusai', '2021-07-08 10:36:51', '2021-07-09 10:36:51', 0, 0, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `catering`
---
-
-CREATE TABLE `catering` (
-  `id_catering` int(11) NOT NULL,
-  `paket` varchar(100) NOT NULL,
-  `harga` varchar(100) NOT NULL,
-  `foto` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `catering`
---
-
-INSERT INTO `catering` (`id_catering`, `paket`, `harga`, `foto`) VALUES
-(2, 'SILVER', 'Rp 24.500.000', ''),
-(3, 'GOLD', 'Rp 29.500.000', ''),
-(4, ' ah', '10000', ''),
-(5, 'fgert', '1000089', ''),
-(6, 's', 'wwee', 'catering_diamond.png');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `dekorasi`
---
-
-CREATE TABLE `dekorasi` (
-  `id_dekorasi` int(11) NOT NULL,
-  `paket` varchar(100) NOT NULL,
-  `harga` varchar(100) NOT NULL,
-  `foto` varchar(200) NOT NULL,
-  `keterangan` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `dekorasi`
---
-
-INSERT INTO `dekorasi` (`id_dekorasi`, `paket`, `harga`, `foto`, `keterangan`) VALUES
-(1, 'SILVER', 'Rp 10.000.000 ', '', ''),
-(2, 'GOLD', 'Rp 20.000.000', '', 'yui'),
-(4, 's', 'sbd', '00fc9ca6-fd82-498e-93af-79f301ddd4b5.JPG', 'cbcvk'),
-(5, 's', 'sbd', '00fc9ca6-fd82-498e-93af-79f301ddd4b5.JPG', 'cbcvk'),
-(6, 'Silver', 'Rp. 30000000', 'foto4.jpg', 'abcdefghijk'),
-(7, ' ah', '1000089', 'diamond.png', 'fhffj'),
-(8, ' ah', '1000089', 'diamond.png', 'fhffj');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `fg`
---
-
-CREATE TABLE `fg` (
-  `id_fg` int(11) NOT NULL,
-  `paket` varchar(100) NOT NULL,
-  `harga` varchar(100) NOT NULL,
-  `foto` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `fg`
---
-
-INSERT INTO `fg` (`id_fg`, `paket`, `harga`, `foto`) VALUES
-(1, 'SILVER', 'Rp 2.000.000', ''),
-(2, 'GOLD', 'Rp 4.000.000', ''),
-(3, 'DIAMOND', 'Rp 7.000.000', ''),
-(4, 'BRONZETYU', '1000089', 'fg_diamond.png');
 
 -- --------------------------------------------------------
 
@@ -190,42 +116,6 @@ INSERT INTO `kategori_vendor` (`kode_unik`, `kategori`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mc`
---
-
-CREATE TABLE `mc` (
-  `id_mc` int(11) NOT NULL,
-  `paket` varchar(100) NOT NULL,
-  `harga` varchar(100) NOT NULL,
-  `foto` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `mc`
---
-
-INSERT INTO `mc` (`id_mc`, `paket`, `harga`, `foto`) VALUES
-(1, 'AKAD', 'Rp 500.000', ''),
-(2, 'RESEPSI', 'Rp 1.000.000', ''),
-(3, 'AKAD & RESEPSI', 'Rp 1.500.000', ''),
-(4, 'ak', '12345', 'mc_diamond.png');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mua`
---
-
-CREATE TABLE `mua` (
-  `id_mua` int(11) NOT NULL,
-  `paket` varchar(200) NOT NULL,
-  `harga` varchar(200) NOT NULL,
-  `gambar` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `rating`
 --
 
@@ -271,7 +161,7 @@ INSERT INTO `tb_paket` (`id_paket`, `id_vendor`, `paket`, `harga`, `deskripsi`, 
 (6, 'VND5', 'Akad Nikah', 500000, 'Paket MC Akad Nikah berlangsung 1-2 jam', 'mc_gold.png', 0),
 (7, 'VND6', 'Akad dan Resepsi', 3000000, 'Paket meliputi make up acara akad dan resepsi serta kedua orang tua mempelai', 'foto1.jpeg', 0),
 (8, 'VND7', 'Akad Resepsi Platinum', 5000000, 'Paket ini meliputi makeup pengantin 2 hari kerja dan orang tua kedua mempelai', 'foto5.jpg', 0),
-(9, '', 'Exclusive', 10000000, 'Foto meliputi acara akad,  acara adat dan resepsi pengantin, selama 2 hari kerja dengan hasil album foto books dan album keluarga', 'IMG_20200119_001305.jpg', 0);
+(9, 'VND8', 'Exclusive', 10000000, 'Foto meliputi acara akad,  acara adat dan resepsi pengantin, selama 2 hari kerja dengan hasil album foto books dan album keluarga', 'IMG_20200119_001305.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -366,24 +256,6 @@ ALTER TABLE `book`
   ADD PRIMARY KEY (`id_booking`);
 
 --
--- Indexes for table `catering`
---
-ALTER TABLE `catering`
-  ADD PRIMARY KEY (`id_catering`);
-
---
--- Indexes for table `dekorasi`
---
-ALTER TABLE `dekorasi`
-  ADD PRIMARY KEY (`id_dekorasi`);
-
---
--- Indexes for table `fg`
---
-ALTER TABLE `fg`
-  ADD PRIMARY KEY (`id_fg`);
-
---
 -- Indexes for table `galeri`
 --
 ALTER TABLE `galeri`
@@ -394,18 +266,6 @@ ALTER TABLE `galeri`
 --
 ALTER TABLE `kategori_vendor`
   ADD PRIMARY KEY (`kode_unik`);
-
---
--- Indexes for table `mc`
---
-ALTER TABLE `mc`
-  ADD PRIMARY KEY (`id_mc`);
-
---
--- Indexes for table `mua`
---
-ALTER TABLE `mua`
-  ADD PRIMARY KEY (`id_mua`);
 
 --
 -- Indexes for table `rating`
@@ -448,40 +308,10 @@ ALTER TABLE `book`
   MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `catering`
---
-ALTER TABLE `catering`
-  MODIFY `id_catering` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `dekorasi`
---
-ALTER TABLE `dekorasi`
-  MODIFY `id_dekorasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `fg`
---
-ALTER TABLE `fg`
-  MODIFY `id_fg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
   MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-
---
--- AUTO_INCREMENT for table `mc`
---
-ALTER TABLE `mc`
-  MODIFY `id_mc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `mua`
---
-ALTER TABLE `mua`
-  MODIFY `id_mua` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `rating`
