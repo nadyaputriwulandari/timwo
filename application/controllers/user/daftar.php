@@ -25,6 +25,7 @@ class Daftar extends CI_Controller
 			'password' => set_value('password'),
 			'alamat' => set_value('alamat'),
 			'no_hp' => set_value('no_hp'),
+			'email' => set_value('email'),
 			//'level' => set_value('level'),
 		);
 		$this->load->view('admin/auth');
@@ -37,6 +38,7 @@ class Daftar extends CI_Controller
 			'password'	=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
 			'alamat' => $this->input->post('alamat', TRUE),
 			'no_hp' => $this->input->post('no_hp', TRUE),
+			'email' => $this->input->post('email', TRUE),
 
 
 		);

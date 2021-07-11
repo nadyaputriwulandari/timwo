@@ -6,10 +6,10 @@
 class Login_model extends CI_Model
 {
 
-	public function cek_login($username, $password)
+	public function cek_login($username)
 	{
 		$this->db->where("username", $username);
-		$this->db->where("password", $password);
+		//$this->db->where("password", $password);
 		return $this->db->get('user');
 	}
 
