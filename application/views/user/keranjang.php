@@ -102,7 +102,7 @@ if ($this->session->userdata('username')) {
 					<div id="edd_checkout_form_wrap" class="edd_clearfix">
 						<!-- <form id="edd_purchase_form" class="edd_form" action="<?= base_url('user/keranjang/pesan') ?>" method="POST"> -->
 
-						<form id="payment-form" method="post">
+						<form id="payment-form" method="post" action="<?= base_url('snap/finish') ?>">
 
 
 							<input type="hidden" name="result_type" id="result-type" value="">

@@ -8,7 +8,10 @@ class keranjang extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-
+		// $params = array('server_key' => 'SB-Mid-server-L4c6BF_MZ-jfhzsoU-2MV5zU', 'production' => false);
+		// $this->load->library('midtrans');
+		// $this->midtrans->config($params);
+		// $this->load->helper('url');
 		$this->username = $this->session->userdata('username');
 		if ($this->session->userdata('username')) {
 			// redirect('')
