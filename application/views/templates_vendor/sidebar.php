@@ -50,7 +50,7 @@
             </li>
             <li class="nav-item">
               <a href="<?= base_url('vendor/paket/') ?>" class="nav-link">
-                <p>PAKET</p>
+                <p>Paket</p>
               </a>
             </li>
 
