@@ -136,29 +136,24 @@ if ($this->session->userdata('username')) {
 										<p id="edd-email-wrap">
 											<label class="edd-label" for="email">
 												Email <span class="edd-required-indicator">*</span></label>
-											<input class="edd-input required" type="email" placeholder="Email" id="email" name="email">
+											<input class="edd-input required" type="email" placeholder="Email" id="email" name="email" value="<?= $user->email ?>" readonly>
 										</p>
 										<p id="edd-first-name-wrap">
 											<label class="edd-label" for="nama">
 												Nama Lengkap <span class="edd-required-indicator">*</span>
 											</label>
 											<input class="edd-input required" type="text" placeholder="Nama Lengkap" id="nama" name="nama" value=" <?= $this->session->userdata('username') ?>" readonly>
-										</p>
-										<p id="edd-first-name-wrap">
-											<label class="edd-label" for="id_username">
-												ID <span class="edd-required-indicator">*</span>
-											</label>
 											<input class="edd-input required" type="hidden" placeholder="Nama Lengkap" id="id_username" name="id_username" value=" <?= $this->session->userdata('id') ?>" readonly>
 										</p>
 										<p id="edd-last-name-wrap">
 											<label class="edd-label" for="edd-last">
 												No HP </label>
-											<input class="edd-input" type="text" id="no_hp" placeholder="No HP" name="no_hp">
+											<input class="edd-input" type="text" id="no_hp" placeholder="No HP" name="no_hp" value="<?= $user->no_hp ?>" readonly>
 										</p>
 										<p id="edd-last-name-wrap">
 											<label class="edd-label" for="alamat">
 												Alamat </label>
-											<textarea class="edd-input" name="alamat" id="alamat"></textarea>
+											<textarea class="edd-input" name="alamat" id="alamat" readonly><?= $user->alamat ?></textarea>
 										</p>
 									</fieldset>
 									<fieldset id="edd_purchase_submit">
@@ -170,7 +165,7 @@ if ($this->session->userdata('username')) {
 										<input type="hidden" name="edd-gateway" value="manual">
 										<!-- <input type="submit" class="edd-submit button" id="edd-purchase-button" name="edd-purchase" value="Purchase"> -->
 										<button class="edd-submit button" id="pay-button" data-total="<?= $this->cart->total(); ?>">Pay!</button>
-										
+
 									</fieldset>
 								</form>
 							</div>

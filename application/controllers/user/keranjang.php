@@ -19,6 +19,7 @@ class keranjang extends CI_Controller
 		} else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" align="center" role="alert">Anda harus login terlebih dahulu!</div>');
 		}
+		$this->load->model('user_model');
 	}
 	public function index()
 	{
@@ -28,8 +29,9 @@ class keranjang extends CI_Controller
 		// 	echo " kosong";
 		// }
 		// die();
+		$data['user'] = $this->user_model->ambil_data($this->username);
 		$this->load->view('user/header');
-		$this->load->view('user/keranjang');
+		$this->load->view('user/keranjang', $data);
 		$this->load->view('user/footer');
 	}
 	public function delete_item($id)
