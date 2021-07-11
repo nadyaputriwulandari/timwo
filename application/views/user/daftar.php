@@ -49,6 +49,12 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Email</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="alamat">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Alamat</span>
@@ -67,7 +73,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="" name="password">
+						<input class="input100" type="" name="password1">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Confirm Password</span>
 					</div>
