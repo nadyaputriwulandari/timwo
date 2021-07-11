@@ -8,7 +8,10 @@ class keranjang extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-
+		// $params = array('server_key' => 'SB-Mid-server-L4c6BF_MZ-jfhzsoU-2MV5zU', 'production' => false);
+		// $this->load->library('midtrans');
+		// $this->midtrans->config($params);
+		// $this->load->helper('url');
 		$this->username = $this->session->userdata('username');
 		if ($this->session->userdata('username')) {
 			// redirect('')
@@ -21,6 +24,9 @@ class keranjang extends CI_Controller
 	{
 		//var_dump($this->model_vendor->tampil_data_by_paket($kode_vendor, $id_paket)->result());
 		// var_dump($this->cart->contents());
+		// if (empty($this->cart->contents())) {
+		// 	echo " kosong";
+		// }
 		// die();
 		$this->load->view('user/header');
 		$this->load->view('user/keranjang');
