@@ -4,13 +4,6 @@
             <div class="editContent">
                 <h1 class="text-center latestitems">PAKET FOTOGRAFER</h1>
             </div>
-            <div class="wow-hr type_short">
-                <span class="wow-hr-h">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </span>
-            </div>
         </div>
 
         <div class="row">
@@ -24,7 +17,6 @@
                         </div>
                         <div class="product-details">
                             <a href="#">
-
                                 <h1>Paket Fotografer <?php echo $ftg->paket ?></h1>
                                 <p><?php echo $ftg->deskripsi ?><p>
                             </a>
