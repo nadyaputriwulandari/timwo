@@ -2,14 +2,7 @@
     <div class="container toparea">
         <div class="underlined-title">
             <div class="editContent">
-                <h1 class="text-center latestitems">PAKET CATERING</h1>
-            </div>
-            <div class="wow-hr type_short">
-                <span class="wow-hr-h">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </span>
+                <h2 class="text-center latestitems">PAKET CATERING</h2>
             </div>
         </div>
 
@@ -19,22 +12,21 @@
                 <div class="col-md-4">
                     <div class="productbox">
                         <div class="fadeshop">
-                            <h1 text align="center">VENDOR : <?php echo $dkr->nama_vendor ?></h1>
-                            <span class="maxproduct"><img src="<?php echo base_url('assets_user/images/' . $dkr->foto) ?>"> </span>
+                            <h5 text align="center">VENDOR : <?php echo $dkr->nama_vendor ?></h5>
+                            <span class="maxproduct"><img width="350px" height="200px" src="<?php echo base_url('assets_user/images/' . $dkr->foto) ?>"> </span>
                         </div>
                         <div class="product-details">
                             <a href="#">
 
-                                <h1>Paket Catering <?php echo $dkr->paket ?></h1>
-                                <p><?php echo $dkr->deskripsi ?><p>
+                                <h5 align="center">Paket Catering <?php echo $dkr->paket ?></h5>
+                                <h6 align="center"><?php echo $dkr->deskripsi ?><h6>
                             </a>
                             <span class="price">
-                                <span class="edd_price">Rp. <?php echo $dkr->harga ?></span>
+                                <h6 class="edd_price" align="center">Rp. <?php echo $dkr->harga ?></h6>
                                 <fieldset id="edd_purchase_submit">
                                     <input type="hidden" name="edd_action" value="purchase">
                                     <input type="hidden" name="edd-gateway" value="manual">
-                                    <a href="<?php echo base_url('user/booking/index/' . $dkr->kode_vendor . '/' . $dkr->id_paket) ?> ">
-                                        <input type="button" class="edd-submit button" id="edd-purchase-button" name="edd-purchase" value="Booking"></a>
+                                    <!-- <a href="<?php echo base_url('user/booking/index/' . $dkr->kode_vendor . '/' . $dkr->id_paket) ?> "> -->
                                 </fieldset>
                             </span>
 

@@ -73,7 +73,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="" name="password1">
+						<input class="input100" type="password" name="password1">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Confirm Password</span>
 					</div>

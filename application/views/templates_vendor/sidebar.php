@@ -53,8 +53,11 @@
                 <p>Paket</p>
               </a>
             </li>
-
-
+            <li class="nav-item">
+              <a href="<?= base_url('vendor/galeri/') ?>" class="nav-link">
+                <p>Galeri</p>
+              </a>
+            </li>
             <li class="nav-item">
               <a href="<?= base_url('vendor/login_vendor/logout') ?>" class="nav-link">
                 <p>Logout</p>

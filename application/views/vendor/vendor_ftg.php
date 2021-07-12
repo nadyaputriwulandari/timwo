@@ -12,8 +12,8 @@
                 <div class="col-md-4">
                     <div class="productbox">
                         <div class="fadeshop">
-                            <h1 text align="center">VENDOR : <?php echo $ftg->nama_vendor ?></h1>
-                            <span class="maxproduct"><img src="<?php echo base_url('assets_user/images/' . $ftg->foto) ?>"> </span>
+                            <h5 text align="center">VENDOR : <?php echo $ftg->nama_vendor ?></h5>
+                            <span class="maxproduct"><img width="350px" height="200px" src="<?php echo base_url('assets_user/images/' . $ftg->foto) ?>"> </span>
                         </div>
                         <div class="product-details">
                             <a href="#">

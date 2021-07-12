@@ -47,10 +47,20 @@
 					</div>
 
 
+					<!-- <div class="wrap-input100 validate-input"> -->
 					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="kategori_vendor">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Kategori</span>
+						<select class="input100" name="kategori_vendor" id="kategori_vendor">
+							<option value="DKR">Dekorasi</option>
+							<option value="FTG">Fotografer</option>
+							<option value="MUA">MUA</option>
+							<option value="CTR">Catering</option>
+							<option value="MC">MC</option>
+						</select>
+						<!-- <input class="input100" type="text" name="kategori_vendor"> -->
+						<!-- <span class="focus-input100"></span> -->
+						<!-- <span class="label-input100">Kategori</span> -->
 					</div>
 
 					<div class="wrap-input100 validate-input">
@@ -72,7 +82,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass2">
+						<input class="input100" type="password" name="password1">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Confirm Password</span>
 					</div>

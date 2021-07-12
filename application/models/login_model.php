@@ -37,10 +37,18 @@ class Login_model extends CI_Model
 		}
 	}
 
-	public function cek_login_vendor($username, $password)
+	public function cek_login_vendor($username)
 	{
+
 		$this->db->where("nama_vendor", $username);
-		$this->db->where("password", $password);
+		//$this->db->where("password", $password);
 		return $this->db->get('tb_vendor');
+
+
+		// $this->db->where("nama_vendor", $username);
+		// $this->db->where("password", $password);
+		// return $this->db->get('tb_vendor');
+
+
 	}
 }

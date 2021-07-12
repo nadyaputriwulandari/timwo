@@ -30,7 +30,7 @@ class Auth extends CI_Controller
 				echo $password;
 				echo $cek_result->password;
 				if (password_verify($password, $cek_result->password)) {
-					echo "SUKSESSSSSSSS";
+					//echo "SUKSESSSSSSSS";
 					$sess_data['username'] = $cek_result->username;
 					$sess_data['level'] = $cek_result->level;
 					$sess_data['id'] = $cek_result->id;
@@ -40,12 +40,6 @@ class Auth extends CI_Controller
 					if ($sess_data['level'] == 'admin') {
 						redirect('admin/dashboard');
 					} else {
-						$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-				  GAGAL !
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
-				  </button>
-				  </div>');
 						redirect('home');
 					};
 				} else {

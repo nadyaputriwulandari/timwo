@@ -36,6 +36,11 @@ class Daftar_vendor extends CI_Controller
 	// 	$this->load->view('vendor/daftar_vendor');
 	// }
 
+	public function add_leading_zero($value, $threshold = 2)
+	{
+		return sprintf('%0' . $threshold . 's', $value);
+	}
+
 	public function input_aksi()
 	{
 
@@ -47,11 +52,12 @@ class Daftar_vendor extends CI_Controller
 
 		$data = array(
 
-			'kode_vendor' => $array_kode[0] . "" . ($array_kode[1] + 1),
+			'kode_vendor' => $array_kode[0] . "" . ($this->add_leading_zero(($array_kode[1] + 1), 3)),
 			'nama_vendor' => $this->input->post('nama_vendor', TRUE),
 			'kategori_vendor'	=> $this->input->post('kategori_vendor', TRUE),
 			'no_telp_vendor'	=> $this->input->post('no_telp_vendor', TRUE),
 			'alamat_vendor'	=> $this->input->post('alamat_vendor', TRUE),
+			//'password'	=> $this->input->post('password1', TRUE),
 			'password'	=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
 			'status'	=> 0
 
