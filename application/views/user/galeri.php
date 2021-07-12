@@ -22,8 +22,7 @@
 			<option value="MC">MC</option>
 		</select> -->
 
-		<br>
-		<br>
+
 		<div class="row">
 			<?php
 			foreach ($galeri as $gal) : ?>

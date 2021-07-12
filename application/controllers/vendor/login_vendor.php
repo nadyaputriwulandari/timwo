@@ -32,34 +32,41 @@ class Login_vendor extends CI_Controller
             // die;
             if ($cek->num_rows() > 0) {
                 $cek_result = $cek->row();
-                echo $password;
-                echo $cek_result->password;
+                //echo $password;
+                // echo $cek_result->password;
                 if (password_verify($password, $cek_result->password)) {
-                    echo "SUKSESSSSSSSS";
-                    $sess_data['nama_vendor'] = $cek_result->nama_vendor;
-                    $sess_data['kategori_vendor'] = $cek_result->kategori_vendor;
-                    $sess_data['kode_vendor'] = $cek_result->kode_vendor;
-
-                    $this->session->set_userdata($sess_data);
-
-                    if ($sess_data['kategori_vendor'] == 'DKR') {
-                        redirect('vendor/dashboard/dekor');
-                    } else if ($sess_data['kategori_vendor'] == 'FTG') {
-                        redirect('vendor/dashboard/fotografer');
-                    } else if ($sess_data['kategori_vendor'] == 'CTR') {
-                        redirect('vendor/dashboard/catering');
-                    } else if ($sess_data['kategori_vendor'] == 'MC') {
-                        redirect('vendor/dashboard/mc');
-                    } else if ($sess_data['kategori_vendor'] == 'MUA') {
-                        redirect('vendor/dashboard/mua');
+                    // echo "SUKSESSSSSSSS";
+                    if ($cek_result->status == 0) {
+                        $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">
+                                           Akun anda belum diverifikasi!
+                                           </div>');
+                        redirect('vendor/login_vendor', 'refresh');
                     } else {
-                        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        $sess_data['nama_vendor'] = $cek_result->nama_vendor;
+                        $sess_data['kategori_vendor'] = $cek_result->kategori_vendor;
+                        $sess_data['kode_vendor'] = $cek_result->kode_vendor;
+
+                        $this->session->set_userdata($sess_data);
+
+                        if ($sess_data['kategori_vendor'] == 'DKR') {
+                            redirect('vendor/dashboard/dekor');
+                        } else if ($sess_data['kategori_vendor'] == 'FTG') {
+                            redirect('vendor/dashboard/fotografer');
+                        } else if ($sess_data['kategori_vendor'] == 'CTR') {
+                            redirect('vendor/dashboard/catering');
+                        } else if ($sess_data['kategori_vendor'] == 'MC') {
+                            redirect('vendor/dashboard/mc');
+                        } else if ($sess_data['kategori_vendor'] == 'MUA') {
+                            redirect('vendor/dashboard/mua');
+                        } else {
+                            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                         GAGAL !
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                         </button>
                                                         </div>');
-                        redirect('vendor/login_vendor');
+                            redirect('vendor/login_vendor');
+                        };
                     };
                 } else {
                     echo "Password Gagal";
@@ -77,6 +84,7 @@ class Login_vendor extends CI_Controller
             }
         }
     }
+
     public function logout()
     {
         $this->session->sess_destroy();

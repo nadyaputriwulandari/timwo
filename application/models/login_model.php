@@ -43,12 +43,8 @@ class Login_model extends CI_Model
 		$this->db->where("nama_vendor", $username);
 		//$this->db->where("password", $password);
 		return $this->db->get('tb_vendor');
-
-
 		// $this->db->where("nama_vendor", $username);
 		// $this->db->where("password", $password);
 		// return $this->db->get('tb_vendor');
-
-
 	}
 }

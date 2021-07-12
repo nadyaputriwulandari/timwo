@@ -10,6 +10,7 @@ class Vendor extends CI_Controller
     $this->load->view('admin/vendor', $data);
     $this->load->view('templates/footer');
   }
+
   public function tampilvendor()
   {
 
@@ -24,6 +25,10 @@ class Vendor extends CI_Controller
   {
     $where = array('kode_vendor' => $kode_vendor);
     $data['tb_vendor'] = $this->model_vendor->edit_data($where, 'tb_vendor')->result();
+
+    $data['submenu'] = $this->db->get_where('tb_vendor', ['kode_vendor' => $kode_vendor])->row_array();
+    $data['menu'] = $this->db->get('kategori_vendor')->result_array();
+
     $this->load->view('templates/header');
     $this->load->view('templates/sidebar');
     $this->load->view('admin/edit_vendor', $data);
@@ -37,7 +42,6 @@ class Vendor extends CI_Controller
     $alamat_vendor = $this->input->post('alamat_vendor');
     $kategori = $this->input->post('kategori');
     $status = $this->input->post('status');
-    //$foto = $this->input->post('foto')
 
     $data = array(
       'nama_vendor' => $nama_vendor,
@@ -47,10 +51,12 @@ class Vendor extends CI_Controller
       'status' =>  $status,
 
     );
-    $where = array(
-      'kode_vendor' => $kode_vendor
-    );
-    $this->model_vendor->update_data($where, $data, 'tb_vendor');
+    $this->db->where('kode_vendor', $kode_vendor);
+    $this->db->update('tb_vendor', $data);
+    // $where = array(
+    //   'kode_vendor' => $kode_vendor
+    // );
+    // $this->model_vendor->update_data($where, $data, 'tb_vendor');
     redirect('admin/vendor');
   }
   public function delete($kode_vendor)

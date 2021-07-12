@@ -41,16 +41,18 @@
 
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<label class="input100">Nama Vendor</label>
 						<input class="input100" type="text" name="nama_vendor">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Nama Vendor</span>
+
 					</div>
 
 
 					<!-- <div class="wrap-input100 validate-input"> -->
 					<div class="wrap-input100 validate-input">
+						<label class="input100">Kategori Vendor</label>
 						<span class="focus-input100"></span>
-						<span class="label-input100">Kategori</span>
+
 						<select class="input100" name="kategori_vendor" id="kategori_vendor">
 							<option value="DKR">Dekorasi</option>
 							<option value="FTG">Fotografer</option>
@@ -64,27 +66,31 @@
 					</div>
 
 					<div class="wrap-input100 validate-input">
+						<label class="input100">No HP</label>
 						<input class="input100" type="text" name="no_telp_vendor">
 						<span class="focus-input100"></span>
-						<span class="label-input100">No Hp</span>
+
 					</div>
 
 					<div class="wrap-input100 validate-input">
+						<label class="input100">Alamat</label>
 						<input class="input100" type="text" name="alamat_vendor">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Alamat</span>
+
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<label class="input100">Password</label>
 						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Password</span>
+
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<label class="input100">Confirm Password</label>
 						<input class="input100" type="password" name="password1">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Confirm Password</span>
+
 					</div>
 
 					<div class="flex-sb-m w-full p-t-3 p-b-32">

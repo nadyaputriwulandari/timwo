@@ -43,39 +43,45 @@
 
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<label class="input100">Username</label>
 						<input class="input100" type="text" name="username">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Username</span>
+
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<label class="input100">Email</label>
 						<input class="input100" type="text" name="email">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Email</span>
+
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<label class="input100">Alamat</label>
 						<input class="input100" type="text" name="alamat">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Alamat</span>
+
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<label class="input100">No HP</label>
 						<input class="input100" type="text" name="no_hp">
 						<span class="focus-input100"></span>
-						<span class="label-input100">No HP</span>
+
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<label class="input100">Password</label>
 						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Password</span>
+
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
+					<div class="wrap-input100 validate-input p-t-5" data-validate="Password is required">
+						<label class="input100">Confirm Password</label>
 						<input class="input100" type="password" name="password1">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Confirm Password</span>
+
 					</div>
 
 					<div class="flex-sb-m w-full p-t-3 p-b-32">
