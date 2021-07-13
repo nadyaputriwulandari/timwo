@@ -45,12 +45,12 @@ class Snap extends CI_Controller
 		// Required
 		$transaction_details = array(
 			'order_id' => rand(),
-			'gross_amount' => $total, // no decimal allowed for creditcard
+			'gross_amount' => $total * 25 / 100, // no decimal allowed for creditcard
 		);
 		foreach ($this->cart->contents() as $items) :
 			$item_details[] = array(
 				'id' => $items['id'],
-				'price' => $items['price'],
+				'price' => $items['price'] * 25 / 100,
 				'quantity' => 1,
 				'name' => $this->cart->product_options($items['rowid'])['Nama_Vendor'] . '(' . $items['name'] . ')'
 			);
@@ -100,7 +100,8 @@ class Snap extends CI_Controller
 			'item_details'       => $item_details,
 			'customer_details'   => $customer_details,
 			'credit_card'        => $credit_card,
-			'expiry'             => $custom_expiry
+			'expiry'             => $custom_expiry,
+			'custom_field1' => ''
 		);
 
 		error_log(json_encode($transaction_data));
@@ -112,7 +113,8 @@ class Snap extends CI_Controller
 	public function finish()
 	{
 		$result = json_decode($this->input->post('result_data'), true);
-		// var_dump($result);
+		var_dump($result);
+		die();
 		// echo strtotime($result['transaction_time']);
 		// echo '<br>';
 		// echo date('Y-m-d H:i:s', strtotime($result['transaction_time']));
