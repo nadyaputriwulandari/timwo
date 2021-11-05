@@ -25,7 +25,7 @@
 							<i class="fa fa-bars"></i>
 							<span class="sr-only">Toggle navigation</span>
 						</button>
-						<a href="index.html" class="navbar-brand brand"> Wedding Organizer </a>
+						<a href="index.html" class="navbar-brand brand"> Tukang Pintar </a>
 					</div>
 					<div id="navbar-collapse-02" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
@@ -58,10 +58,10 @@
 					<div class="col-md-12 text-center">
 						<div class="text-homeimage">
 							<div class="maintext-image" data-scrollreveal="enter top over 1.5s after 0.1s">
-								Weddingku
+								Your Trusted Building Solutions
 							</div>
 							<div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.3s">
-								Wedding Organizer Terbaik
+								
 							</div>
 						</div>
 					</div>
