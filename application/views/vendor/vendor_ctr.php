@@ -8,28 +8,23 @@
 
         <div class="row">
             <?php
-            foreach ($catering as $key => $dkr) : ?>
-                <div class="col-md-4">
-                    <div class="productbox">
-                        <div class="fadeshop">
-                            <h5 text align="center">VENDOR : <?php echo $dkr->nama_vendor ?></h5>
-                            <span class="maxproduct"><img width="350px" height="200px" src="<?php echo base_url('assets_user/images/' . $dkr->foto) ?>"> </span>
+            foreach ($catering as $key => $dkr) :
+            ?>
+                <div class="col-4">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h4 class="card-title">VENDOR : <?php echo $dkr->nama_vendor ?></h4>
                         </div>
-                        <div class="product-details">
-                            <a href="#">
-
-                                <h5 align="center">Paket Catering <?php echo $dkr->paket ?></h5>
-                                <h6 align="center"><?php echo $dkr->deskripsi ?><h6>
-                            </a>
-                            <span class="price">
-                                <h6 class="edd_price" align="center">Rp. <?php echo $dkr->harga ?></h6>
-                                <fieldset id="edd_purchase_submit">
-                                    <input type="hidden" name="edd_action" value="purchase">
-                                    <input type="hidden" name="edd-gateway" value="manual">
-                                    <!-- <a href="<?php echo base_url('user/booking/index/' . $dkr->kode_vendor . '/' . $dkr->id_paket) ?> "> -->
-                                </fieldset>
-                            </span>
-
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img width="300px" height="250px" src="<?php echo base_url('assets_user/images/' . $dkr->foto) ?>">
+                                    <h5 style="text-align:center ;">Paket Fotografer <?php echo $dkr->paket ?></h5>
+                                    <p style="text-align:center ;"><?php echo $dkr->deskripsi ?>
+                                    <p style="text-align:center ;">
+                                        Rp <?= number_format($dkr->harga, 0, ",", "."); ?></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

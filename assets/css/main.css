@@ -236,6 +236,7 @@ iframe {
   background-position: center;
   position: relative;
   z-index: 1;
+  background-color: bisque;
 }
 
 .login100-more::before {

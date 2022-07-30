@@ -21,7 +21,7 @@
         foreach ($galeri as $ct) : ?>
             <tr>
                 <td width="20px"><?php echo $no++ ?> </td>
-                <td><?php echo $ct->gambar ?></td>
+                <td><img src="<?= base_url('assets_user/images/' . $ct->gambar) ?>" style="width: 100px;"></td>
                 <td><?php echo $ct->kategori ?></td>
 
 

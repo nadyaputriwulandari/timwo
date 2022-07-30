@@ -34,7 +34,7 @@
               <?php
               if ($this->session->userdata('kategori_vendor') == "DKR") {
                 echo base_url("vendor/dashboard/dekor");
-              } elseif ($this->session->userdata('kategori_vendor' == "FTG")) {
+              } elseif ($this->session->userdata('kategori_vendor') == "FTG") {
                 echo base_url("vendor/dashboard/fotografer");
               } elseif ($this->session->userdata('kategori_vendor') == "MUA") {
                 echo base_url("vendor/dashboard/mua");

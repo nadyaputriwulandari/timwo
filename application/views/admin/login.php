@@ -102,10 +102,12 @@
 					</div>
 				</form>
 
-				<div class="login100-more" style="background-image: url('assets/images/bg-01.jpg');">
+				<div class="login100-more">
+					<img width="885px" height="900px" src="<?= base_url('assets_user/images/log.jpg'); ?>">
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 

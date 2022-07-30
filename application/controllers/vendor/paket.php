@@ -10,11 +10,12 @@ class Paket extends CI_Controller
 	{
 		$where = array('id_vendor' => $this->session->userdata('kode_vendor'));
 		$data['tb_paket'] = $this->model_paket->tampil_data_by_vendor($where);
-
+		// var_dump($data);
+		// die;
 		$this->load->view('templates_vendor/header');
 		$this->load->view('templates_vendor/sidebar');
 		$this->load->view('vendor/paket', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates_vendor/footer');
 	}
 	public function input()
 	{

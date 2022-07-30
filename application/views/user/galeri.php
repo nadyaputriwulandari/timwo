@@ -2,7 +2,7 @@
 	<div class="container toparea">
 		<div class="underlined-title">
 			<div class="editContent">
-				<h1 class="text-center latestitems">Gallery</h1>
+				<h1 class="text-center latestitems">Galeri</h1>
 			</div>
 			<div class="wow-hr type_short">
 				<span class="wow-hr-h">
@@ -19,7 +19,7 @@
 				<div class="col-md-4">
 					<div class="productbox">
 						<div class="fadeshop">
-							<span class="maxproduct"><img src="<?php echo base_url('assets_user/images/' . $gal['gambar']) ?>"> </span>
+							<span class="maxproduct"><img src="<?= base_url('assets_user/images/' . $gal['gambar']) ?>"> </span>
 						</div>
 
 					</div>

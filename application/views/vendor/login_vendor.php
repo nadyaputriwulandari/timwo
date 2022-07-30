@@ -93,10 +93,12 @@
                     </div>
                 </form>
 
-                <div class="login100-more" style="background-image: url('assets_user/images/login.jpg');">
+                <div class="login100-more">
+                    <img width="885px" height="900px" src="<?= base_url('assets_user/images/logven.jpg'); ?>">
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
