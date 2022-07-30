@@ -65,4 +65,12 @@ class Vendor extends CI_Controller
     $this->model_vendor->hapus_data($where, 'tb_vendor');
     redirect('admin/vendor');
   }
+  public function pesanan()
+  {
+    $data['book'] = $this->model_booking->tampil_data()->result();
+    $this->load->view('templates_vendor/header');
+    $this->load->view('templates_vendor/sidebar');
+    $this->load->view('admin/booking', $data);
+    $this->load->view('templates_vendor/footer');
+  }
 }

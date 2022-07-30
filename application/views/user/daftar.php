@@ -37,7 +37,7 @@
 
 				<form class="login100-form validate-form" method="POST" action="<?php echo site_url('user/daftar/input_aksi') ?>">
 					<span class="login100-form-title p-b-43">
-						Registrasi User
+						Registrasi Klien
 					</span>
 
 

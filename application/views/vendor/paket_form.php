@@ -4,7 +4,7 @@
 
 		<div class="form-group">
 			<label>id_vendor</label>
-			<input type="text" name="id_vendor" class="form-control" value="<?php echo $this->session->userdata('kode_vendor') ?>">
+			<input type="text" name="id_vendor" class="form-control" value="<?php echo $this->session->userdata('kode_vendor') ?>" disabled>
 
 		</div>
 

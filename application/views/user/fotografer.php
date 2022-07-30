@@ -29,7 +29,7 @@
 								<p><?php echo $ftg->deskripsi ?><p>
 							</a>
 							<span class="price">
-								<span class="edd_price">Rp. <?php echo $ftg->harga ?></span>
+								<span class="edd_price">Rp <?= number_format($ftg->harga, 0, ",", "."); ?></span>
 								<fieldset id="edd_purchase_submit">
 									<input type="hidden" name="edd_action" value="purchase">
 									<input type="hidden" name="edd-gateway" value="manual">

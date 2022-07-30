@@ -6,6 +6,8 @@
 
 
     <table class="table table-bordered table-striped table-hover">
+        <br>
+        <h5 align="center">TABEL GALERI</h5>
         <tr>
 
             <th>NO</th>

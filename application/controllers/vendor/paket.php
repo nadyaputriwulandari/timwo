@@ -58,10 +58,10 @@ class Paket extends CI_Controller
 
 	public function input_aksi()
 	{
-
-
+		$ci = get_instance();
+		$id = $ci->session->userdata('kode_vendor');
 		$data = array(
-			'id_vendor' => $this->input->post('id_vendor', TRUE),
+			'id_vendor' => $id,
 			'paket' => $this->input->post('paket', TRUE),
 			'harga'	=> $this->input->post('harga', TRUE),
 			'deskripsi'	=> $this->input->post('deskripsi', TRUE),

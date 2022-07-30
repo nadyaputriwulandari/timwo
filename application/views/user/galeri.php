@@ -2,7 +2,7 @@
 	<div class="container toparea">
 		<div class="underlined-title">
 			<div class="editContent">
-				<h1 class="text-center latestitems">Gallery</h1>
+				<h1 class="text-center latestitems">Galeri</h1>
 			</div>
 			<div class="wow-hr type_short">
 				<span class="wow-hr-h">

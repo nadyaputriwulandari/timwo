@@ -29,11 +29,11 @@
 					</div>
 					<div id="navbar-collapse-02" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li class="propClone"><a href="<?php echo base_url('home'); ?>">Home</a></li>
-							<li class="propClone"><a href="<?php echo base_url('user/shop'); ?>">Services</a></li>
-							<li class="propClone"><a href="<?php echo base_url('galeri'); ?>">Gallery</a></li>
-							<li class="propClone"><a href="<?php echo base_url('kontak'); ?>">Contact</a></li>
-							<li class="propClone"><a href="<?php echo base_url('user/keranjang'); ?>">Cart</a></li>
+							<li class="propClone"><a href="<?php echo base_url('home'); ?>">Beranda</a></li>
+							<li class="propClone"><a href="<?php echo base_url('user/shop'); ?>">Layanan</a></li>
+							<li class="propClone"><a href="<?php echo base_url('galeri'); ?>">Galeri</a></li>
+							<li class="propClone"><a href="<?php echo base_url('kontak'); ?>">Kontak Kami</a></li>
+							<li class="propClone"><a href="<?php echo base_url('user/keranjang'); ?>">Keranjang</a></li>
 
 							<?php
 							if ($this->session->userdata('username')) {
@@ -58,7 +58,7 @@
 					<div class="col-md-12 text-center">
 						<div class="text-homeimage">
 							<div class="maintext-image" data-scrollreveal="enter top over 1.5s after 0.1s">
-								Weddingku
+								Anik Rias Pengantin
 							</div>
 							<div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.3s">
 								Wedding Organizer Terbaik

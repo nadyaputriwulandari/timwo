@@ -12,8 +12,8 @@
                 <div class="col-md-4">
                     <div class="productbox">
                         <div class="fadeshop">
-                            <h5 text align="center">VENDOR : <?php echo $dkr->nama_vendor ?></h5>
-                            <span class="maxproduct"><img width="350px" height="200px" src="<?php echo base_url('assets_user/images/' . $dkr->foto) ?>"> </span>
+                            <h5 style="text-align: center;">VENDOR : <?php echo $dkr->nama_vendor ?></h5>
+                            <span class="maxproduct"><img width="200px" style="text-align: center;" src="<?php echo base_url('assets_user/images/' . $dkr->foto) ?>"> </span>
                         </div>
                         <div class="product-details">
                             <h1>Paket MUA <?php echo $dkr->paket ?></h1>
