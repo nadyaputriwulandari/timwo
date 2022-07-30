@@ -1,32 +1,33 @@
-
 <table class="table table-bordered">
+  <br>
+  <h5 align="center">TABEL PESANAN</h5>
   <tr>
-    <th>ID</th>
-    <th>KATEGORI</th>
-    <th>NAMA VENDOR</th>
-    <th>TANGGAL</th>
-   
-    <th colspan="2">AKSI</th>
-</tr>
+    <th>NO</th>
+    <th>ID PESAN</th>
+    <th>ORDER ID</th>
+    <th>ID PAKET</th>
+    <th>HARGA</th>
+    <th>TANGGAL ACARA</th>
 
-<?php
-$no=1;
-foreach ($book as $bk) : ?>
-  
-<tr>
+    <th>AKSI</th>
+  </tr>
 
-  <td><?php echo $no++ ?></td>
-  <td><?php echo $bk->kategori ?></td>
-  <td><?php echo $bk->nama_vendor ?></td>
-  <td><?php echo $bk->tanggal ?></td>
-  
-  <td><?php echo anchor('admin/booking/edit/' .$bk->id_booking, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div') ?></td>
-  <td><?php echo anchor('admin/booking/hapus/' .$bk->id_booking, '<div class="btn btn-primary btn-sm"><i class="fa fa-trash"></i></div') ?></td>
+  <?php
+  $no = 1;
+  foreach ($book as $bk) : ?>
 
-</tr>
+    <tr>
+      <td><?php echo $no++ ?></td>
+      <td><?php echo $bk->id_pesan ?></td>
+      <td><?php echo $bk->order_id ?></td>
+      <td><?php echo $bk->id_paket ?></td>
+      <td><?php echo $bk->harga ?></td>
+      <td><?php echo $bk->tgl_acara ?></td>
 
-<?php endforeach; ?>
+      <!-- <td><?php echo anchor('admin/booking/edit/' . $bk->id_pesan, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div') ?></td> -->
+      <td><?php echo anchor('admin/booking/hapus/' . $bk->id_pesan, '<div class="btn btn-primary btn-sm"><i class="fa fa-trash"></i></div') ?></td>
 
+    </tr>
+  <?php endforeach; ?>
 </table>
 </div>
-      

@@ -59,6 +59,11 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="<?= base_url('admin/vendor/pesanan') ?>" class="nav-link">
+                <p>Booking</p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="<?= base_url('vendor/login_vendor/logout') ?>" class="nav-link">
                 <p>Logout</p>
               </a>

@@ -75,11 +75,6 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('admin/bayar/') ?>" class="nav-link">
-                <p>Bayar</p>
-              </a>
-            </li>
-            <li class="nav-item">
               <a href="<?= base_url('admin/auth/logout') ?>" class="nav-link">
                 <p>Logout</p>
               </a>

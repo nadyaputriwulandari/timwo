@@ -86,7 +86,7 @@
 							</div>
 							<div class="product-details">
 								<a href="<?php echo base_url('user/catering'); ?>">
-									<h1>Catering</h1>
+									<h1>Katering</h1>
 								</a>
 
 							</div>

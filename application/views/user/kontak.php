@@ -13,12 +13,13 @@
 			<div class="col-md-4 editContent">
 				<div class="col">
 					<span class="numberstep"><i class="fa fa-microphone"></i></span>
-					<h3 class="numbertext">Our Contact</h3>
+					<h3 class="numbertext">Kontak Kami</h3>
 					<p>
-						Phone : 76-612345 <br>
-						Whatsapp : 08767676767 <br>
-						Instagram : Weddingku.official <br>
-						Address : Jl. Soedirman no 93, Kecamatan Tampan, Pekanbaru <br>
+						Phone : 081268143870<br>
+						Whatsapp : 081268143870 <br>
+						Facebook : Anik Rias Pengantin <br>
+						Instagram : Anik Rias Pengantin <br>
+						Address : Jl. Tuanku Tambusai, Kecamatan Tanah Putih, Rokan Hilir <br>
 					</p>
 				</div>
 				<!-- /.col -->

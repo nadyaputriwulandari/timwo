@@ -6,7 +6,7 @@ class Model_booking extends CI_Model
 
 	public function tampil_data()
 	{
-		return $this->db->get('book');
+		return $this->db->get('tb_pesanan');
 	}
 
 	public function edit_booking($where, $table)
@@ -25,6 +25,4 @@ class Model_booking extends CI_Model
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
-
-	
 }

@@ -12,14 +12,14 @@
                 <div class="col-md-4">
                     <div class="productbox">
                         <div class="fadeshop">
-                            <h5 text align="center">VENDOR : <?php echo $dkr->nama_vendor ?></h5>
+                            <h4 style="text-align:center ;">VENDOR : <?php echo $dkr->nama_vendor ?></h4>
                             <span class="maxproduct"><img width="350px" height="200px" src="<?php echo base_url('assets_user/images/' . $dkr->foto) ?>"> </span>
                         </div>
                         <div class="product-details">
-                            <h1>Paket MUA <?php echo $dkr->paket ?></h1>
-                            <h6 align="center"><?php echo $dkr->deskripsi ?><h6>
+                            <h5 style="text-align:center ;">Paket MUA <?php echo $dkr->paket ?></h5>
+                            <h6 style="text-align:center ;"><?php echo $dkr->deskripsi ?><h6>
                                     <span class="price">
-                                        <h6 align="center" class="edd_price">Rp. <?php echo $dkr->harga ?></h6>
+                                        <h6 style="text-align:center ;" class="edd_price">Rp <?= number_format($dkr->harga, 0, ",", ".") ?></h6>
                                         <fieldset id="edd_purchase_submit">
                                             <input type="hidden" name="edd_action" value="purchase">
                                             <input type="hidden" name="edd-gateway" value="manual">
