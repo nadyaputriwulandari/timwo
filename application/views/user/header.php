@@ -25,7 +25,7 @@
 							<i class="fa fa-bars"></i>
 							<span class="sr-only">Toggle navigation</span>
 						</button>
-						<a href="index.html" class="navbar-brand brand"> Wedding Organizer </a>
+						<a href="index.html" class="navbar-brand brand"> Tukang Pintar </a>
 					</div>
 					<div id="navbar-collapse-02" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
@@ -57,6 +57,7 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<div class="text-homeimage">
+<<<<<<< HEAD
 							<div class="maintext-image" data-scrollreveal="enter top over 1.5s after 0.1s" style="text-shadow: 5px 5px 10px black;
 ">
 								Anik Rias Pengantin
@@ -64,6 +65,17 @@
 							<div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.3s" style="font-family: monospace;font-size: 60px;text-shadow: 5px 5px 10px black;
 ">
 								Wedding Organizer Rokan Hilir
+=======
+							<div class="maintext-image" data-scrollreveal="enter top over 1.5s after 0.1s">
+<<<<<<< HEAD
+								Anik Rias Pengantin
+=======
+								Your Trusted Building Solutions
+>>>>>>> 001c9493a252db05ed40091419aca6bc4eb35ceb
+							</div>
+							<div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.3s">
+								
+>>>>>>> 566589a38ed54a5c589748a935ee5301e28bcf76
 							</div>
 						</div>
 					</div>

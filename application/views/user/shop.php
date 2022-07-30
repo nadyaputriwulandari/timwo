@@ -22,7 +22,7 @@
 			<div class="container toparea">
 				<div class="underlined-title">
 					<div class="editContent">
-						<h1 class="text-center latestitems">PAKET</h1>
+						<h1 class="text-center latestitems">SERVICE</h1>
 					</div>
 					<div class="wow-hr type_short">
 						<span class="wow-hr-h">
@@ -37,11 +37,11 @@
 						<div class="productbox">
 							<div class="fadeshop">
 
-								<span class="maxproduct"><img src="<?php echo base_url() ?>assets_user/images/silver.png" alt=""></span>
+								<span class="maxproduct"><img src="<?php echo base_url() ?>assets_user/images/coba.png" alt=""></span>
 							</div>
 							<div class="product-details">
 								<a href="<?php echo base_url('user/dekor'); ?>">
-									<h1>Dekorasi</h1>
+									<h1>HOME MAINTENANCE</h1>
 								</a>
 
 							</div>
@@ -52,32 +52,33 @@
 						<div class="productbox">
 							<div class="fadeshop">
 
-								<span class="maxproduct"><img src="<?php echo base_url() ?>assets_user/images/fotografer.jpg" alt=""></span>
+								<span class="maxproduct"><img src="<?php echo base_url() ?>assets_user/images/renovation.png" alt="" align="center"></span>
 							</div>
 							<div class="product-details">
 								<a href="<?php echo base_url('user/fotografer'); ?>">
-									<h1>Fotografer</h1>
+									<h1>BUILD AND RENOVATE</h1>
 								</a>
 
 							</div>
 						</div>
 					</div>
-					<!-- /.productbox -->
 					<div class="col-md-4">
 						<div class="productbox">
 							<div class="fadeshop">
 
-								<span class="maxproduct"><img src="<?php echo base_url() ?>assets_user/images/mc_silver.png" alt=""></span>
+								<span class="maxproduct"><img src="<?php echo base_url() ?>assets_user/images/measute.png" alt="" align="center"></span>
 							</div>
 							<div class="product-details">
-								<a href="<?php echo base_url('user/mc'); ?>">
-									<h1>MC</h1>
+								<a href="<?php echo base_url('user/fotografer'); ?>">
+									<h1>DESIGN INSPIRATION</h1>
 								</a>
 
 							</div>
 						</div>
 					</div>
+				</div>
 					<!-- /.productbox -->
+<<<<<<< HEAD
 					<div class="col-md-4">
 						<div class="productbox">
 							<div class="fadeshop">
@@ -92,31 +93,35 @@
 							</div>
 						</div>
 					</div>
+=======
+					
+>>>>>>> 566589a38ed54a5c589748a935ee5301e28bcf76
 					<!-- /.productbox -->
-					<div class="col-md-4">
-						<div class="productbox">
-							<div class="fadeshop">
-
-								<span class="maxproduct"><img src="<?php echo base_url() ?>assets_user/images/foto1.jpeg" alt=""></span>
-							</div>
-							<div class="product-details">
-								<a href="<?php echo base_url('user/mua'); ?>">
-									<h1>MUA</h1>
-								</a>
-
-							</div>
-						</div>
+					
 					</div>
 					<!-- /.productbox -->
 
 					<!-- /.productbox -->
 				<?php
 
+
 			} else {
 				?>
 					<?= $this->session->flashdata('message'); ?>
 				<?php } ?>
 
+				</div>
+			</section>
+				
+						
+					<!-- /.productbox -->
+					
+					</div>
+					<!-- /.productbox -->
+
+					<!-- /.productbox -->
+				<?php
+				?>
 				</div>
 			</div>
 			</div>

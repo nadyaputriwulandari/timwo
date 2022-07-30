@@ -8,12 +8,21 @@
 
         <div class="row">
             <?php
+<<<<<<< HEAD
             foreach ($mua as $key => $dkr) :
             ?>
                 <div class="col-4">
                     <div class="card card-primary">
                         <div class="card-header">
                             <h4 style="text-align:center;" class="card-title">VENDOR : <?php echo $dkr->nama_vendor ?></h4>
+=======
+            foreach ($mua as $key => $dkr) : ?>
+                <div class="col-md-4">
+                    <div class="productbox">
+                        <div class="fadeshop">
+                            <h5 style="text-align: center;">VENDOR : <?php echo $dkr->nama_vendor ?></h5>
+                            <span class="maxproduct"><img width="200px" style="text-align: center;" src="<?php echo base_url('assets_user/images/' . $dkr->foto) ?>"> </span>
+>>>>>>> 566589a38ed54a5c589748a935ee5301e28bcf76
                         </div>
                         <div class="card-body">
                             <div class="row">
