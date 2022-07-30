@@ -85,12 +85,21 @@ header .navbar-white {
 }
 
 .item.header {
+<<<<<<< HEAD
 	background-image: url(../images/bg2.jpg);
 	background-repeat: no-repeat;
 	background-position: 0% top;
 	background-size: cover;
 	background-attachment: scroll;
 	background-color: rgba(0, 0, 0, 0);
+=======
+	background-image:url(../images/tukang.jpeg);
+	background-repeat:no-repeat;
+	background-position:0% top;
+	background-size:cover;
+	background-attachment:scroll;
+	background-color:rgba(0,0,0,0);
+>>>>>>> 001c9493a252db05ed40091419aca6bc4eb35ceb
 }
 
 .navbar-nav,
